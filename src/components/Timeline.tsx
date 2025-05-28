@@ -93,7 +93,7 @@ export default function Timeline() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl font-bold text-foreground sm:text-4xl">Our Journey</h2>
-          <p className="mt-4 text-lg text-muted-foreground">The evolution of Flowers & Saints through the years</p>
+          <p className="mt-4 text-lg text-muted-foreground">The evolution of Digitrust Media through the years</p>
         </motion.div>
 
         <div className="relative">

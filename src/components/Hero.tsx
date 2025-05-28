@@ -2,6 +2,10 @@
 
 import { motion } from "framer-motion"
 
+
+
+const heroCaption = "Our team of experts use their extensive knowledge of the digital space to discover the right influencers for your business and help you create an engaging and effective campaign."
+
 export default function Hero() {
   return (
     <div className="relative isolate overflow-hidden bg-background">
@@ -13,7 +17,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <span className="text-gradient">Flowers & Saints</span>
+            {/* <span className="text-gradient">You're a brand looking for promotion?</span> */}
+            <span className="text-gradient">Experience the power of influencer marketing</span>
           </motion.h1>
           <motion.p
             className="mt-6 text-lg leading-8 text-muted-foreground"
@@ -21,8 +26,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Where minimal design meets floral artistry. We craft elegant experiences that inspire and elevate your
-            space.
+            {heroCaption}
           </motion.p>
           <motion.div
             className="mt-10 flex items-center gap-x-6"
@@ -31,7 +35,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <a
-              href="https://www.flowersandsaints.com.au"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="apple-button"
@@ -39,7 +43,7 @@ export default function Hero() {
               Explore Our Work
             </a>
             <a
-              href="https://www.flowersandsaints.com.au"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="text-sm font-semibold leading-6 text-foreground"
@@ -60,7 +64,7 @@ export default function Hero() {
               alt="Flowers & Saints design concept"
               width={600}
               height={600}
-              className="w-[500px] rounded-2xl shadow-xl ring-1 ring-gray-900/10"
+              className="w-[500px] rounded-2xl"
             />
           </div>
         </motion.div>

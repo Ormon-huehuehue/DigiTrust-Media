@@ -5,30 +5,20 @@ import { motion, useAnimation, useMotionValue } from "framer-motion"
 
 const features = [
   {
-    title: "Minimal Design",
-    description: "Clean aesthetics that put your content in the spotlight.",
+    title: "Strategic Campaigns",
+    description: "We help brands by strategising the campaign in a way that it gets good ROI & curate it in the best possible way",
     icon: "✨",
   },
   {
-    title: "Responsive",
-    description: "Flawless experiences across all devices and screen sizes.",
+    title: "Experience",
+    description: "Experience of dealing with over 2000 influencers and 6 months of doing great campains with perfectly satisfied clients.",
     icon: "📱",
   },
   {
-    title: "Fast Performance",
-    description: "Lightning-quick load times for smooth user interactions.",
+    title: "Best in Class team",
+    description: "Our whole team are themselves influencers so we know how to deal with the brands & influencers.",
     icon: "⚡",
-  },
-  {
-    title: "Accessibility",
-    description: "Inclusive design practices for all users.",
-    icon: "🌈",
-  },
-  {
-    title: "SEO Optimized",
-    description: "Built to help your site rank higher in search results.",
-    icon: "🔍",
-  },
+  }
 ]
 
 export default function FeatureCarousel() {

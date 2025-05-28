@@ -32,7 +32,7 @@ export default function Header() {
         </div>
         <div className="flex gap-x-12">
           <Link
-            href="https://www.flowersandsaints.com.au"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
@@ -40,7 +40,7 @@ export default function Header() {
             Work
           </Link>
           <Link
-            href="https://www.flowersandsaints.com.au"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
@@ -48,7 +48,7 @@ export default function Header() {
             About
           </Link>
           <Link
-            href="https://www.flowersandsaints.com.au"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"

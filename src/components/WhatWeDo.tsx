@@ -2,7 +2,9 @@
 
 import { motion } from "framer-motion"
 
-export default function WearYourStory() {
+const caption = "We're a marketing agency that helps businesses grow with our expertise in influencer marketing & social media management. We are not limited to any brand/business category. We are here to help everyone grow."
+
+export default function WhatWeDo() {
   return (
     <section className="bg-background py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,10 +14,9 @@ export default function WearYourStory() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">Wear Your Story</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6">What we do</h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
-            Every piece from Flowers & Saints is a canvas for your unique narrative. Our designs blend minimal
-            aesthetics with nature's beauty, allowing you to express your individuality.
+            {caption}
           </p>
           <motion.div
             className="mt-10"
@@ -24,12 +25,12 @@ export default function WearYourStory() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <a
-              href="https://www.flowersandsaints.com.au"
+              href=""
               target="_blank"
               rel="noopener noreferrer"
               className="apple-button inline-flex items-center"
             >
-              Explore Collection
+              Get in Touch
               <svg
                 className="w-5 h-5 ml-2"
                 fill="none"
