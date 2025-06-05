@@ -5,43 +5,43 @@ import { motion, useScroll, useTransform, useSpring, useInView } from "framer-mo
 
 const timelineEvents = [
   {
-    year: 2018,
-    title: "Flowers & Saints Founded",
+    type: "Food Brands",
+    title: "McDonald's and KFC",
     description: "Our journey began with a passion for minimal design and floral artistry.",
     details:
       "Founded by Jane Doe and John Smith, Flowers & Saints started as a small studio in Sydney's Surry Hills, combining their love for minimalist design and botanical beauty.",
   },
   {
-    year: 2019,
-    title: "First Major Exhibition",
+    type: "Skin Care",
+    title: "Swati Cosmetics, Bombay Shaving Company",
     description: "Showcased our unique blend of digital art and floral arrangements at the Sydney Design Festival.",
     details:
       "Our exhibition 'Digital Bloom' attracted over 10,000 visitors and received critical acclaim for its innovative approach to merging technology with natural elements.",
   },
   {
-    year: 2020,
-    title: "Launch of Online Store",
+    type: "Salons & Spas",
+    title: "Anemoi",
     description: "Expanded our reach by bringing our creations to the digital world.",
     details:
       "In response to global changes, we pivoted to e-commerce, offering our unique designs and virtual floral workshops to a worldwide audience.",
   },
   {
-    year: 2021,
-    title: "Collaboration with Top Brands",
+    type: "Cafes and Clubs",
+    title: "BW Club, White club, Key Club, Aquila, Slique, Brown Club, Big Billers, Bergamo, Privee, Code, Cafe by Soul - 65th Avenue, Diablo, Romeo Lane, Knot, Air Anivory Cafe, W Vabian, Flos Cafe",
     description: "Partnered with leading lifestyle brands to create exclusive collections.",
     details:
       "Our collaborations included limited edition prints with Australian fashion label Zimmermann and a bespoke fragrance line with Aesop.",
   },
   {
-    year: 2022,
-    title: "International Recognition",
+    type: "HealthCare",
+    title: "@dermalyunaethetics (Dr Muskan Tyagi), @aimfit_dermaluxe_",
     description: "Received the prestigious International Floral Design Award.",
     details:
       "Our 'Ethereal Echoes' installation, which combined holographic projections with live flowers, won the gold medal at the Chelsea Flower Show.",
   },
   {
-    year: 2023,
-    title: "Expansion to Physical Stores",
+    type: "Automobile",
+    title: "Carmate",
     description: "Opened our first flagship store in the heart of Sydney.",
     details:
       "Our Bondi Beach location features an immersive retail experience, blending digital installations with a curated selection of floral arrangements and lifestyle products.",
@@ -113,7 +113,7 @@ export default function Timeline() {
 
           {timelineEvents.map((event, index) => (
             <TimelineEvent
-              key={event.year}
+              key={event.type}
               event={event}
               index={index}
               isExpanded={expandedEvent === index}
@@ -161,7 +161,7 @@ function TimelineEvent({
         onClick={onToggle}
       >
         <div className="p-4 bg-background rounded-lg shadow-md border border-primary/10">
-          <span className="font-bold text-primary">{event.year}</span>
+          <span className="font-bold text-primary">{event.type}</span>
           <h3 className="text-lg font-semibold mb-1">{event.title}</h3>
           <p className="text-muted-foreground">{event.description}</p>
           <motion.div

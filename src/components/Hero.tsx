@@ -2,8 +2,6 @@
 
 import { motion } from "framer-motion"
 
-
-
 const heroCaption = "Our team of experts use their extensive knowledge of the digital space to discover the right influencers for your business and help you create an engaging and effective campaign."
 
 export default function Hero() {
