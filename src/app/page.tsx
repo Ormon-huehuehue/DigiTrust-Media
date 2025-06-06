@@ -5,7 +5,7 @@ import PortfolioGrid from "@/components/PortfolioGrid"
 import Timeline from "@/components/Timeline"
 import Marquee from "@/components/Marquee"
 import ContactForm from "@/components/ContactForm"
-import NewsletterSubscribe from "@/components/NewsletterSubscribe"
+import BrandShowcase from "@/components/BrandShowcase"
 
 export default function Home() {
   return (
@@ -17,8 +17,8 @@ export default function Home() {
       <PortfolioGrid />
       <Timeline />
       <Marquee />
+      <BrandShowcase/>
       <ContactForm />
-      <NewsletterSubscribe />
     </>
   )
 }

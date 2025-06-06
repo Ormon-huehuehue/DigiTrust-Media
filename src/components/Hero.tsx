@@ -16,7 +16,7 @@ export default function Hero() {
             transition={{ duration: 0.8 }}
           >
             {/* <span className="text-gradient">You're a brand looking for promotion?</span> */}
-            <span className="text-gradient">Experience the power of influencer marketing</span>
+            <span className="text-gradient font-haptik">Experience the power of influencer marketing</span>
           </motion.h1>
           <motion.p
             className="mt-6 text-lg leading-8 text-muted-foreground"
