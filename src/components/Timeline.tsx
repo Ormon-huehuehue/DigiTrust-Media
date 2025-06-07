@@ -92,7 +92,7 @@ export default function Timeline() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl font-haptik">Our Journey</h2>
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl font-haptik">Process</h2>
           <p className="mt-4 text-lg text-muted-foreground">The evolution of Digitrust Media through the years</p>
         </motion.div>
 

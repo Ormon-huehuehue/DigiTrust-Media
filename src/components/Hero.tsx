@@ -7,10 +7,10 @@ const heroCaption = "Our team of experts use their extensive knowledge of the di
 export default function Hero() {
   return (
     <div className="relative isolate overflow-hidden bg-background">
-      <div className="mx-auto max-w-7xl px-6 py-20 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
+      <div className="mx-auto max-w-7xl px-6 lg:py-20 py-2 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <motion.h1
-            className="mt-10 text-4xl font-bold tracking-tight text-foreground sm:text-6xl"
+            className="lg:mt-10 mt-0 font-bold tracking-tight text-foreground text-5xl sm:text-6xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -56,7 +56,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <div className="relative">
+          <div className="flex justify-center">
             <img
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/creative-SW6QDQbcVuwPgb6a2CYtYmRbsJa4k1.png"
               alt="Flowers & Saints design concept"

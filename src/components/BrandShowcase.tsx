@@ -6,45 +6,47 @@ import Image from 'next/image';
 
 const brands = [
   {
-    logo: "NIKE",
+    logo: "McDonald's",
+    logoUrl : "/brandLogos/McDonalds.png",
     logoStyle: "font-bold italic text-4xl",
     description: "Scaled Omnichannel Brand Ambassador and Community program and developed content for national campaigns."
   },
   {
-    logo: "LVMH",
+    logo: "KFC",
+    logoUrl : "/brandLogos/KFC.png",
     logoStyle: "font-light text-4xl tracking-wider",
     description: "Enhanced luxury funnel messaging for e-commerce focused communities and audience segments."
   },
   {
-    logo: "Coca-Cola",
+    logo: "Bombay Shaving Company",
+    logoUrl : "/brandLogos/bombayShavingCompany.png",
     logoStyle: "font-bold text-3xl",
     description: "Curated and executed national user generated content programs to drive national campaign virality."
   },
   {
-    logo: "Adobe",
+    logo: "Swati Cosmetics",
+    logoUrl : "/brandLogos/SwatiCosmetics.png",
     logoStyle: "font-bold text-3xl",
     description: "Developed partner opportunities and executed national expo messaging and expo activations."
   },
   {
-    logo: "SONY MUSIC",
-    logoStyle: "font-bold text-2xl tracking-widest",
-    description: "Led Artist and Repertoire for global artists, managed merchandising and gamification around music drops, and developed art for viral campaigns."
-  },
-  {
-    logo: "BVLGARI",
-    logoStyle: "font-light text-3xl tracking-[0.3em]",
-    description: "Grew influencer and ambassador programs with access to global influencers."
-  },
-  {
-    logo: "Canon",
+    logo: "Carmate",
+    logoUrl : "",
     logoStyle: "font-bold text-4xl",
     description: "Developed partner opportunities and executed national expo messaging and expo activations."
   },
   {
-    logo: "wework",
-    logoStyle: "font-light text-3xl lowercase",
-    description: "Developed partner opportunities and executed national expo messaging and expo activations."
-  }
+    logo: "Salons and Spas",
+    logoUrl : "",
+    logoStyle: "font-bold text-2xl tracking-widest",
+    description: "Anemoi"
+  },
+  {
+    logo: "Cafes and Clubs",
+    logoUrl : "",
+    logoStyle: "font-light text-3xl tracking-[0.3em]",
+    description: "BW Club, White club, Key Club, Aquila, Slique, Brown Club, Big Billers, Bergamo, Privee, Code, Cafe by Soul - 65th Avenue, Diablo, Romeo Lane, Knot, Air Anivory Cafe, W Vabian, Flos Cafe"
+  },
 ];
 
 
@@ -126,18 +128,19 @@ const BrandShowcase = () => {
               
               {/* Content */}
               <div className="relative z-10 h-full flex flex-col justify-between min-h-[136px]">
-                <div className="flex items-start justify-start mb-4 ">
-                  {/* <h2 className={`${brand.logoStyle} text-foreground`}>
-                    {brand.logo}
-                  </h2> */}
-                  <Image 
-                    // src= {brand.logo}
-                    src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.d9BC3qSnrWyiJLLizRQOygHaC9%26pid%3DApi&f=1&ipt=6d39398ea27d77e01821eafebedc69da288372cb09c7fd2ea3f5949276be0b50&ipo=images"
-                    alt="Brand Icon"
-                    width = {200}
-                    height={20}
-                    className="ml-2"
-                  />
+                <div className="flex items-start justify-start mb-4">
+                  { brand.logoUrl.length > 0 ? 
+                    <Image 
+                      src= {brand.logoUrl}
+                      alt="Brand Icon"
+                      width = {0}
+                      height={0}
+                      className="ml-2 w-auto h-[50px]"
+                    /> : 
+                    <h2 className={`${brand.logoStyle} text-foreground`}>
+                      {brand.logo}
+                    </h2>
+                  }
                 </div>
                 
                 <div className="flex-1 flex items-end">
@@ -198,10 +201,17 @@ export  function BrandCarousel() {
             {brands.map((brand, index) => (
               <motion.div
                 key={index}
-                className="min-w-[300px] h-[400px] p-8 m-4 bg-background rounded-3xl shadow-lg flex flex-col justify-between hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
+                className="min-w-[300px] h-[400px] p-8 m-4 bg-background rounded-sm shadow-lg flex flex-col justify-between hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
               >
                 <div>
-                  <div className="text-4xl mb-4">{brand.logo}</div>
+                  <Image 
+                    // src= {brand.logo}
+                    src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.d9BC3qSnrWyiJLLizRQOygHaC9%26pid%3DApi&f=1&ipt=6d39398ea27d77e01821eafebedc69da288372cb09c7fd2ea3f5949276be0b50&ipo=images"
+                    alt="Brand Icon"
+                    width = {200}
+                    height={20}
+                    className="ml-2"
+                  />
                   <p className="text-muted-foreground">{brand.description}</p>
                 </div>
                 <div className="mt-4">
