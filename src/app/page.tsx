@@ -6,11 +6,14 @@ import Timeline from "@/components/Timeline"
 import Marquee from "@/components/Marquee"
 import ContactForm from "@/components/ContactForm"
 import BrandShowcase from "@/components/BrandShowcase"
+import AnimatedList from "@/components/AnimatedList"
+import WhyChooseUs from "@/components/WhyChooseUs"
 
 export default function Home() {
   return (
     <>
       <Hero />
+      <WhyChooseUs />
       <Marquee />
       <WhatWeDo />
       <FeatureCarousel />
@@ -19,6 +22,7 @@ export default function Home() {
       <Marquee />
       <BrandShowcase/>
       <ContactForm />
+  
     </>
   )
 }

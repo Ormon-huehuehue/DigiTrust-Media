@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, useAnimation, useMotionValue } from "framer-motion"
+import { motion, useMotionValue, animate } from "framer-motion"
 import Image from 'next/image';
 
 const brands = [
@@ -25,25 +25,31 @@ const brands = [
   },
   {
     logo: "Swati Cosmetics",
-    logoUrl : "/brandLogos/SwatiCosmetics.png",
+    logoUrl : "/brandLogos/Swati.png",
     logoStyle: "font-bold text-3xl",
     description: "Developed partner opportunities and executed national expo messaging and expo activations."
   },
   {
     logo: "Carmate",
-    logoUrl : "",
+    logoUrl : "/brandLogos/Carmate.png",
     logoStyle: "font-bold text-4xl",
     description: "Developed partner opportunities and executed national expo messaging and expo activations."
   },
   {
-    logo: "Salons and Spas",
-    logoUrl : "",
-    logoStyle: "font-bold text-2xl tracking-widest",
-    description: "Anemoi"
+    logo: "Romeo Lane",
+    logoUrl : "/brandLogos/RomeoLane.png",
+    logoStyle: "font-light text-3xl tracking-[0.3em]",
+    description: "BW Club, White club, Key Club, Aquila, Slique, Brown Club, Big Billers, Bergamo, Privee, Code, Cafe by Soul - 65th Avenue, Diablo, Romeo Lane, Knot, Air Anivory Cafe, W Vabian, Flos Cafe"
   },
   {
-    logo: "Cafes and Clubs",
-    logoUrl : "",
+    logo: "Diablo",
+    logoUrl : "/brandLogos/Diablo.png",
+    logoStyle: "font-light text-3xl tracking-[0.3em]",
+    description: "BW Club, White club, Key Club, Aquila, Slique, Brown Club, Big Billers, Bergamo, Privee, Code, Cafe by Soul - 65th Avenue, Diablo, Romeo Lane, Knot, Air Anivory Cafe, W Vabian, Flos Cafe"
+  },
+  {
+    logo: "AIR",
+    logoUrl : "/brandLogos/AIR.png",
     logoStyle: "font-light text-3xl tracking-[0.3em]",
     description: "BW Club, White club, Key Club, Aquila, Slique, Brown Club, Big Billers, Bergamo, Privee, Code, Cafe by Soul - 65th Avenue, Diablo, Romeo Lane, Knot, Air Anivory Cafe, W Vabian, Flos Cafe"
   },
@@ -109,7 +115,7 @@ const BrandShowcase = () => {
         <h2 className="text-[2.5em] tracking-[-1.5px] font-bold text-center md:text-start lg:mx-10 mx-0 mb-6 mt-7 text-foreground font-haptik">
           Brands we've worked with
         </h2>
-        <div className="hidden md:grid grid-cols-2 lg:grid-cols-3 gap-1 !text-foreground">
+        <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-1 !text-foreground">
           {brands.map((brand, index) => (
             <motion.div
               key={index}
@@ -163,72 +169,80 @@ const BrandShowcase = () => {
 export default BrandShowcase;
 
 
-export  function BrandCarousel() {
+export function BrandCarousel() {
   const [width, setWidth] = useState(0)
   const carousel = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
-  const controls = useAnimation()
 
   useEffect(() => {
     if (carousel.current) {
-      setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth)
+      const scrollWidth = carousel.current.scrollWidth
+      const offsetWidth = carousel.current.offsetWidth
+      setWidth(scrollWidth - offsetWidth)
     }
   }, [])
 
+
   const handleDragEnd = () => {
     const currentX = x.get()
+
     if (currentX > 0) {
-      controls.start({ x: 0, transition: { type: "spring", stiffness: 300, damping: 30 } })
+      // Animate back to left boundary
+      animate(x, 0, { type: "spring", stiffness: 300, damping: 30 })
     } else if (currentX < -width) {
-      controls.start({ x: -width, transition: { type: "spring", stiffness: 300, damping: 30 } })
+      // Animate back to right boundary
+      animate(x, -width, { type: "spring", stiffness: 300, damping: 30 })
     }
   }
 
   return (
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-  
-        <motion.div ref={carousel} className="cursor-grab overflow-hidden">
-          <motion.div
-            drag="x"
-            dragConstraints={{ right: 0, left: -width }}
-            whileTap={{ cursor: "grabbing" }}
-            animate={controls}
-            style={{ x }}
-            onDragEnd={handleDragEnd}
-            className="flex"
-          >
-            {brands.map((brand, index) => (
-              <motion.div
-                key={index}
-                className="min-w-[300px] h-[400px] p-8 m-4 bg-background rounded-sm shadow-lg flex flex-col justify-between hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
-              >
-                <div>
-                  <Image 
-                    // src= {brand.logo}
-                    src = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.d9BC3qSnrWyiJLLizRQOygHaC9%26pid%3DApi&f=1&ipt=6d39398ea27d77e01821eafebedc69da288372cb09c7fd2ea3f5949276be0b50&ipo=images"
-                    alt="Brand Icon"
-                    width = {200}
-                    height={20}
-                    className="ml-2"
-                  />
-                  <p className="text-muted-foreground">{brand.description}</p>
+    <div className="max-w-7xl mx-auto">
+      <motion.div ref={carousel} className="cursor-grab overflow-hidden">
+        <motion.div
+          drag="x"
+          dragConstraints={{ left: -width, right: 0 }}
+          whileTap={{ cursor: "grabbing" }}
+          style={{ x }}
+          onDragEnd={handleDragEnd}
+          className="flex"
+        >
+        { brands.map((brand, index) => (
+            <motion.div
+              key={index}
+              className="min-w-[30rem] h-[18rem] p-8 m-4 bg-background rounded-sm shadow-lg flex flex-col justify-between hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
+            >
+              <div>
+                <div className="mb-5">
+                  { brand.logoUrl.length > 0 ? 
+                      <Image 
+                        src= {brand.logoUrl}
+                        alt="Brand Icon"
+                        width = {0}
+                        height={0}
+                        className="ml-2 w-auto h-[50px]"
+                      /> : 
+                      <h2 className= 'text-foreground'>
+                        {brand.logo}
+                      </h2>
+                  }
                 </div>
-                <div className="mt-4">
-                  <a
-                    href="https://www.flowersandsaints.com.au"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline"
-                  >
-                    Learn more →
-                  </a>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
+                <p className="text-muted-foreground">{brand.description}</p>
+              </div>
+              <div className="mt-4">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Learn more →
+                </a>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
-      </div>
-
+      </motion.div>
+    </div>
   )
 }
+

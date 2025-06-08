@@ -8,9 +8,7 @@ import type React from "react"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Minimal Creative Agency",
-  description: "Apple-inspired design portfolio",
-    generator: 'v0.dev'
+  title: "Digitrust Media"
 }
 
 export default function RootLayout({

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { useTheme } from "next-themes"
 import { motion } from "framer-motion"
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"
@@ -19,14 +20,16 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className=" flex w-screen items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">Flowers & Saints</span>
-            <img
-              className="h-8 w-auto"
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/creative-SW6QDQbcVuwPgb6a2CYtYmRbsJa4k1.png"
+            <span className="sr-only">Digitrust Media</span>
+            <Image
+              className="h-10 w-auto"
+              src="/Logo.png"
               alt="Flowers & Saints Logo"
+              width = {0}
+              height = {0}
             />
           </Link>
         </div>

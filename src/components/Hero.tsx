@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import AnimatedList from "./AnimatedList"
 
 const heroCaption = "Our team of experts use their extensive knowledge of the digital space to discover the right influencers for your business and help you create an engaging and effective campaign."
 
