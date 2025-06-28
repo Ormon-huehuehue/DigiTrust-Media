@@ -128,7 +128,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="pt-20 pb-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background  to-blueish/50" >
+    <div className="pt-20 pb-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-100 to-blueish border-2 border-zinc-300" >
       <div className="max-w-7xl mx-auto">
         {/* Main heading */}
         <motion.div 
@@ -138,7 +138,7 @@ const WhyChooseUs = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="relative inline-block">
-            <h1 className="text-foreground text-5xl font-bold mb-6 tracking-wide font-haptik">
+            <h1 className="text-zinc-700 text-5xl font-bold mb-6 tracking-wide font-haptik">
               WHY CHOOSE US
             </h1>
             

@@ -15,7 +15,6 @@ export default function Home() {
       <Hero />
       <WhatWeDo />
      
-      <Marquee />
       <WhyChooseUs />
     
       {/* <FeatureCarousel /> */}
@@ -23,6 +22,7 @@ export default function Home() {
       <Timeline />
       {/* <Marquee /> */}
       <BrandShowcase/>
+      <Marquee />
       <ContactForm />
   
     </>

@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export default function Marquee() {
   return (
-    <div className="relative w-full overflow-hidden bg-background py-16">
+    <div className="relative w-full overflow-hidden bg-background py-16 border-b-2 border-gray-300">
       <div className="absolute inset-0 z-10" />
       <motion.div
         className="flex whitespace-nowrap"

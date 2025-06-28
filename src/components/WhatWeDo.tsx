@@ -6,7 +6,7 @@ const caption = "We're a marketing agency that helps businesses grow with our ex
 
 export default function WhatWeDo() {
   return (
-    <section className="bg-section-3 py-20 bg-gradient-to-b from-blueish to-background">
+    <section className="bg-section-3 py-20 bg-gradient-to-b from-blueish to-blueish/50 border-t-2 border-zinc-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

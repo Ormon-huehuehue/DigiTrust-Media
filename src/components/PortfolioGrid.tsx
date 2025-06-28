@@ -59,7 +59,7 @@ export default function PortfolioGrid() {
   const filteredProjects = filter === "All" ? projects : projects.filter((project) => project.category === filter)
 
   return (
-    <section className="pt-20 bg-gradient-to-b from-blueish/50 via-muted/20 to-background">
+    <section className="py-20 bg-gradient-to-b from-blueish/50 via-muted/20 to-background ">
       {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
@@ -172,7 +172,7 @@ const DummyContent = () => {
       {[...new Array(3).fill(1)].map((_, index) => {
         return (
           <div
-            key={"dummy-content" + index}
+            key={index}
             className="bg-[#F5F5F7] dark:bg-neutral-800 p-8 md:p-14 rounded-3xl mb-4"
           >
             <p className="text-neutral-600 dark:text-neutral-400 text-base md:text-2xl font-sans max-w-3xl mx-auto">
@@ -198,43 +198,99 @@ const DummyContent = () => {
   );
 };
 
+
+
 const data = [
   {
     category: "Branding",
-    title: "Minimalist Brand Identity",
-    src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
+    title: "McDonald’s Community Program",
+    src: "/mcd.jpg",
+    content: (
+      <>
+        <p>
+          Scaled brand ambassador programs for McDonald’s across major metros, with creator-led community content boosting reach and engagement for national drops.
+        </p>
+      </>
+    ),
   },
   {
-    category: "Web Design",
-    title: "Sleek Web Experience",
-    src: "https://images.unsplash.com/photo-1531554694128-c4c6665f59c2?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
+    category: "Digital Strategy",
+    title: "KFC E-commerce Funnel Messaging",
+    src: "https://images.unsplash.com/photo-1606788075761-0ef9b6e6d2d7?q=80&w=3000&auto=format&fit=crop",
+    content: (
+      <>
+        <p>
+          Revamped KFC’s digital messaging for targeted food delivery platforms, boosting CTR and conversions via creator storytelling.
+        </p>
+      </>
+    ),
   },
   {
-    category: "Mobile App",
-    title: "Intuitive Mobile App",
-    src: "https://images.unsplash.com/photo-1713869791518-a770879e60dc?q=80&w=2333&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
-  },
-
-  {
-    category: "Digital Marketing",
-    title: "Elegant Digital Campaign",
-    src: "https://images.unsplash.com/photo-1599202860130-f600f4948364?q=80&w=2515&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
+    category: "UGC Campaign",
+    title: "Bombay Shaving Company Creator Push",
+    src: "https://images.unsplash.com/photo-1611078489935-0cb964de46fc?q=80&w=3000&auto=format&fit=crop",
+    content: <DummyContent/>
   },
   {
-    category: "UI/UX",
-    title: "Refined UI/UX Design.",
-    src: "https://images.unsplash.com/photo-1602081957921-9137a5d6eaee?q=80&w=2793&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
+    category: "Influencer Marketing",
+    title: "SWATI Cosmetics Expo Buzz",
+    src: "https://images.unsplash.com/photo-1556228578-5a67993c0eeb?q=80&w=3000&auto=format&fit=crop",
+    content: (
+      <>
+        <p>
+          Activated influencers during major beauty expos to increase product trials and in-store footfall for SWATI’s Nordic line.
+        </p>
+      </>
+    ),
   },
   {
-    category: "Product Design",
-    title: "Minimalist Product Design",
-    src: "https://images.unsplash.com/photo-1511984804822-e16ba72f5848?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    content: <DummyContent />,
+    category: "Activation",
+    title: "Carmate Auto Expo Launch",
+    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=3000&auto=format&fit=crop",
+    content: (
+      <>
+        <p>
+          Developed creator-led buzz and content series for Carmate’s booth at the National Auto Expo, improving test-drive bookings by 3x.
+        </p>
+      </>
+    ),
+  },
+  {
+    category: "Nightlife & Hospitality",
+    title: "Romeo Lane Lifestyle Content",
+    src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=3000&auto=format&fit=crop",
+    content: (
+      <>
+        <p>
+          Collaborated with nightlife influencers and music creators to position Romeo Lane as the go-to premium bar lounge for Gen Z weekends.
+        </p>
+      </>
+    ),
+  },
+  {
+    category: "Hospitality",
+    title: "Diablo Café & Club Experience",
+    src: "https://images.unsplash.com/photo-1541544181001-659f7aa4d4a7?q=80&w=3000&auto=format&fit=crop",
+    content: (
+      <>
+        <p>
+          Created viral Reels and walkthroughs for Diablo’s high-energy party experience, resulting in packed weekends and 40% spike in bookings.
+        </p>
+      </>
+    ),
+  },
+  {
+    category: "Luxury Dining",
+    title: "AIR: An Ivory Region",
+    src: "https://images.unsplash.com/photo-1635776068725-4e643da7f36d?q=80&w=3000&auto=format&fit=crop",
+    content: (
+      <>
+        <p>
+          Promoted AIR’s luxury dining brand through creator-hosted evenings and aesthetic storytelling, creating an aspirational brand presence online.
+        </p>
+      </>
+    ),
   },
 ];
+
 

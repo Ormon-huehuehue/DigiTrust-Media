@@ -5,6 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useTheme } from "next-themes"
 import { motion, useScroll, useTransform } from "framer-motion"
+import AnimatedButton from "./ui/animated-button"
 
 const links = [
   {
@@ -93,16 +94,16 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        {/* <div className="flex flex-1 justify-end">
+        <div className="flex flex-1 justify-end">
           {mounted && (
             <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="rounded-full p-2 bg-primary/10 text-primary hover:bg-primary/20 transition-colors"
+              className="rounded-md p-2 bg-primary/10 text-muted-foreground font-bold hover:scale-105 text-sm px-5 transition-all"
             >
-              {theme === "dark" ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
+            CONTACT US
             </button>
           )}
-        </div> */}
+        </div>
+  
       </nav>
     </motion.header>
   )

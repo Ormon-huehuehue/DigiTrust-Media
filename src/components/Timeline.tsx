@@ -48,26 +48,6 @@ const timelineEvents = [
   },
 ]
 
-const FlowerIcon = ({ progress }: { progress: number }) => (
-  <svg
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="w-6 h-6"
-    style={{ transform: `scale(${progress})` }}
-  >
-    <path
-      d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
-      stroke="currentColor"
-      strokeWidth="2"
-    />
-    <path
-      d="M12 8C12 8 14 10 14 12C14 14 12 16 12 16C12 16 10 14 10 12C10 10 12 8 12 8Z"
-      stroke="currentColor"
-      strokeWidth="2"
-    />
-  </svg>
-)
 
 export default function Timeline() {
   const [expandedEvent, setExpandedEvent] = useState<number | null>(null)
@@ -87,7 +67,7 @@ export default function Timeline() {
   const backgroundOpacity = useTransform(scrollYProgress, [0, 1], [0, 0.8])
 
   return (
-    <section ref={containerRef} className="py-20 overflow-hidden relative">
+    <section ref={containerRef} className="py-20 overflow-hidden relative border-2 border-gray-200">
       {/* Scroll-triggered background overlay */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-background to-gray-200 pointer-events-none"
@@ -100,7 +80,7 @@ export default function Timeline() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl font-haptik">PROCESS</h2>
+          <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl md:text-5xl lg:text-6xl font-haptik">PROCESS</h2>
           <p className="mt-4 text-lg text-muted-foreground">The evolution of Digitrust Media through the years</p>
         </motion.div>
 
@@ -110,15 +90,6 @@ export default function Timeline() {
             className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-primary/20"
             style={{ scaleY: scaleX }}
           />
-
-          {/* Flower icon */}
-          <motion.div
-            className="sticky top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-primary"
-            style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
-          >
-            <FlowerIcon progress={useTransform(scrollYProgress, [0, 1], [0.5, 1]) as any} />
-          </motion.div>
-
           {timelineEvents.map((event, index) => (
             <TimelineEvent
               key={event.type}

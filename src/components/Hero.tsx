@@ -9,10 +9,11 @@ const heroCaption = "Our team of experts use their extensive knowledge of the di
 export default function Hero() {
   return (
     <div className="relative isolate overflow-hidden bg-section-1">
-      <div className="absolute inset-0 w-full h-full bg-slate-200 z-1 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
       <Boxes/>
-      <div className="mx-auto max-w-7xl px-6 lg:py-20 py-2 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0 z-10">
+      <div className="absolute inset-0 w-full h-full bg-slate-200 z-1 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+  
+      <div className="relative z-10 mx-auto max-w-7xl px-6 mt-[6rem] lg:mt-0 lg:py-20 py-2 lg:px-8 pointer-events-none">
+        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <motion.h1
             className="lg:mt-10 mt-0 font-bold tracking-tight text-foreground text-5xl sm:text-6xl"
             initial={{ opacity: 0, y: 20 }}
@@ -54,19 +55,37 @@ export default function Hero() {
             </a>
           </motion.div>
         </div>
+        
+        {/* Image positioned at bottom right */}
         <motion.div
-          className="mx-auto mt-16 lg:mt-0 z-10"
+          className="absolute bottom-0 right-0 lg:block hidden"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <img
+            src="/Banner.png"
+            alt="Flowers & Saints design concept"
+            width={600}
+            height={600}
+            className="w-[500px] rounded-2xl"
+          />
+        </motion.div>
+        
+        {/* Mobile image */}
+        <motion.div
+          className="mx-auto mt-16 lg:hidden"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <div className="flex justify-center">
             <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/creative-SW6QDQbcVuwPgb6a2CYtYmRbsJa4k1.png"
-              alt="Flowers & Saints design concept"
-              width={600}
-              height={600}
-              className="w-[500px] rounded-2xl"
+              src="/Banner.png"
+              alt="Influencer marketing"
+              width={800}
+              height={800}
+              className="w-[600px] rounded-2xl"
             />
           </div>
         </motion.div>
