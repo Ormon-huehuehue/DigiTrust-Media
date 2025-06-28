@@ -204,7 +204,7 @@ const data = [
   {
     category: "Branding",
     title: "McDonald’s Community Program",
-    src: "/mcd.jpg",
+    src: "/work/mcd.jpg",
     content: (
       <>
         <p>
@@ -216,7 +216,7 @@ const data = [
   {
     category: "Digital Strategy",
     title: "KFC E-commerce Funnel Messaging",
-    src: "https://images.unsplash.com/photo-1606788075761-0ef9b6e6d2d7?q=80&w=3000&auto=format&fit=crop",
+    src: "/work/kfc.jpg",
     content: (
       <>
         <p>
@@ -228,13 +228,13 @@ const data = [
   {
     category: "UGC Campaign",
     title: "Bombay Shaving Company Creator Push",
-    src: "https://images.unsplash.com/photo-1611078489935-0cb964de46fc?q=80&w=3000&auto=format&fit=crop",
+    src: "/work/shaving.jpg",
     content: <DummyContent/>
   },
   {
     category: "Influencer Marketing",
     title: "SWATI Cosmetics Expo Buzz",
-    src: "https://images.unsplash.com/photo-1556228578-5a67993c0eeb?q=80&w=3000&auto=format&fit=crop",
+    src: "/work/swati.png",
     content: (
       <>
         <p>
@@ -246,7 +246,7 @@ const data = [
   {
     category: "Activation",
     title: "Carmate Auto Expo Launch",
-    src: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=3000&auto=format&fit=crop",
+    src: "/work/carmate.png",
     content: (
       <>
         <p>
@@ -257,36 +257,12 @@ const data = [
   },
   {
     category: "Nightlife & Hospitality",
-    title: "Romeo Lane Lifestyle Content",
+    title: "Romeo Lane Life Style Content",
     src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=3000&auto=format&fit=crop",
     content: (
       <>
         <p>
           Collaborated with nightlife influencers and music creators to position Romeo Lane as the go-to premium bar lounge for Gen Z weekends.
-        </p>
-      </>
-    ),
-  },
-  {
-    category: "Hospitality",
-    title: "Diablo Café & Club Experience",
-    src: "https://images.unsplash.com/photo-1541544181001-659f7aa4d4a7?q=80&w=3000&auto=format&fit=crop",
-    content: (
-      <>
-        <p>
-          Created viral Reels and walkthroughs for Diablo’s high-energy party experience, resulting in packed weekends and 40% spike in bookings.
-        </p>
-      </>
-    ),
-  },
-  {
-    category: "Luxury Dining",
-    title: "AIR: An Ivory Region",
-    src: "https://images.unsplash.com/photo-1635776068725-4e643da7f36d?q=80&w=3000&auto=format&fit=crop",
-    content: (
-      <>
-        <p>
-          Promoted AIR’s luxury dining brand through creator-hosted evenings and aesthetic storytelling, creating an aspirational brand presence online.
         </p>
       </>
     ),
