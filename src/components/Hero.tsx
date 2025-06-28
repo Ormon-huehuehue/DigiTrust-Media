@@ -2,14 +2,17 @@
 
 import { motion } from "framer-motion"
 import AnimatedList from "./AnimatedList"
+import { Boxes } from "./ui/background-boxes"
 
 const heroCaption = "Our team of experts use their extensive knowledge of the digital space to discover the right influencers for your business and help you create an engaging and effective campaign."
 
 export default function Hero() {
   return (
-    <div className="relative isolate overflow-hidden bg-background">
+    <div className="relative isolate overflow-hidden bg-section-1">
+      <div className="absolute inset-0 w-full h-full bg-slate-200 z-1 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+      <Boxes/>
       <div className="mx-auto max-w-7xl px-6 lg:py-20 py-2 lg:flex lg:items-center lg:gap-x-10 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
+        <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0 z-10">
           <motion.h1
             className="lg:mt-10 mt-0 font-bold tracking-tight text-foreground text-5xl sm:text-6xl"
             initial={{ opacity: 0, y: 20 }}
@@ -52,7 +55,7 @@ export default function Hero() {
           </motion.div>
         </div>
         <motion.div
-          className="mx-auto mt-16 lg:mt-0"
+          className="mx-auto mt-16 lg:mt-0 z-10"
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}

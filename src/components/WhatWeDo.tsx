@@ -6,7 +6,7 @@ const caption = "We're a marketing agency that helps businesses grow with our ex
 
 export default function WhatWeDo() {
   return (
-    <section className="bg-background py-20">
+    <section className="bg-section-3 py-20 bg-gradient-to-b from-blueish to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -14,7 +14,7 @@ export default function WhatWeDo() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 font-haptik">What we do</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 font-haptik">WHAT WE DO</h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             {caption}
           </p>

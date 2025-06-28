@@ -4,23 +4,71 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { useTheme } from "next-themes"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"
+
+const links = [
+  {
+    name: "WORK",
+    url: ""
+  },
+  {
+    name: "ABOUT",
+    url: ""
+  },
+  {
+    name: "CONTACT",
+    url: ""
+  }
+]
 
 export default function Header() {
   const [mounted, setMounted] = useState(false)
+  const [isVisible, setIsVisible] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0)
   const { theme, setTheme } = useTheme()
+
+  // Scroll progress for header behavior
+  const { scrollY } = useScroll()
+  
+  // Transform scroll Y to header visibility
+  const headerY = useTransform(scrollY, [0, 100], [0, -100])
 
   useEffect(() => setMounted(true), [])
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling down and not at the top
+        setIsVisible(false)
+      } else if (currentScrollY < lastScrollY) {
+        // Scrolling up
+        setIsVisible(true)
+      }
+      
+      setLastScrollY(currentScrollY)
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [lastScrollY])
+
   return (
     <motion.header
-      className="sticky top-0 z-50 bg-background/80 backdrop-blur-md"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
+      className="fixed top-0 z-50 w-full bg-blueish/80 backdrop-blur-md"
+      animate={{ 
+        y: isVisible ? 0 : -100,
+        opacity: isVisible ? 1 : 0
+      }}
+      transition={{ 
+        duration: 0.3,
+        ease: "easeInOut"
+      }}
+      initial={{ y: 0 }}
     >
-      <nav className=" flex w-screen items-center justify-between p-6 lg:px-8" aria-label="Global">
+      <nav className="flex w-screen items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Digitrust Media</span>
@@ -34,30 +82,17 @@ export default function Header() {
           </Link>
         </div>
         <div className="flex gap-x-12">
-          <Link
-            href=""
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
-          >
-            Work
-          </Link>
-          <Link
-            href=""
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href=""
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
-          >
-            Contact
-          </Link>
+          {links.map((link, index) => (
+            <Link
+              key={index}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
+            >
+              {link.name}
+            </Link>
+          ))}
         </div>
         <div className="flex flex-1 justify-end">
           {mounted && (

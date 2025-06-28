@@ -29,10 +29,10 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-tr from-background via-muted/40 to-muted">
       <div className="container mx-auto">
         <motion.h2
-          className="text-5xl font-black mb-16 text-center text-white"
+          className="text-5xl font-bold mb-16 text-center text-foreground font-haptik"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -43,12 +43,12 @@ export default function Testimonials() {
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.author}
-              className="bg-gray-800 p-6 rounded-lg"
+              className="bg-card p-6 rounded-lg border border-border"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
             >
-              <p className="text-gray-300 mb-4">"{testimonial.quote}"</p>
+              <p className="text-muted-foreground mb-4">"{testimonial.quote}"</p>
               <div className="flex items-center">
                 <Image
                   src={testimonial.image || "/placeholder.svg"}
@@ -58,8 +58,8 @@ export default function Testimonials() {
                   className="rounded-full mr-4"
                 />
                 <div>
-                  <p className="font-bold text-white">{testimonial.author}</p>
-                  <p className="text-gray-400">{testimonial.position}</p>
+                  <p className="font-bold text-foreground">{testimonial.author}</p>
+                  <p className="text-muted-foreground">{testimonial.position}</p>
                 </div>
               </div>
             </motion.div>

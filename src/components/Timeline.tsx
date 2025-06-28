@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
 
 const timelineEvents = [
@@ -83,16 +83,24 @@ export default function Timeline() {
     restDelta: 0.001,
   })
 
+  // Transform scroll progress to background opacity
+  const backgroundOpacity = useTransform(scrollYProgress, [0, 1], [0, 0.8])
+
   return (
-    <section ref={containerRef} className="py-20 bg-background overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={containerRef} className="py-20 overflow-hidden relative">
+      {/* Scroll-triggered background overlay */}
+      <motion.div 
+        className="absolute inset-0 bg-gradient-to-br from-background to-gray-200 pointer-events-none"
+        style={{ opacity: backgroundOpacity }}
+      />
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl font-haptik">Process</h2>
+          <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl font-haptik">PROCESS</h2>
           <p className="mt-4 text-lg text-muted-foreground">The evolution of Digitrust Media through the years</p>
         </motion.div>
 

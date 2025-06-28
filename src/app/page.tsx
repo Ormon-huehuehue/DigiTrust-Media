@@ -13,13 +13,15 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <WhyChooseUs />
-      <Marquee />
       <WhatWeDo />
-      <FeatureCarousel />
+     
+      <Marquee />
+      <WhyChooseUs />
+    
+      {/* <FeatureCarousel /> */}
       <PortfolioGrid />
       <Timeline />
-      <Marquee />
+      {/* <Marquee /> */}
       <BrandShowcase/>
       <ContactForm />
   

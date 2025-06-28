@@ -1,8 +1,9 @@
 "use client"
 import React, { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
 
-const AnimatedSection = ({ title, items, delay = 0 }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+const AnimatedSection = ({ title, items, delay = 0 } : {title : string, items : string[], delay : number}) => {
+  const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
   const [animationStarted, setAnimationStarted] = useState(false);
 
   useEffect(() => {
@@ -16,12 +17,12 @@ const AnimatedSection = ({ title, items, delay = 0 }) => {
     <div className="w-full max-w-sm">
       {/* Header */}
       <div className="relative mb-8">
-        <h3 className="text-white text-xl font-light mb-4">{title}</h3>
+        <h3 className="text-foreground text-xl font-light mb-4">{title}</h3>
         
         {/* Main separator line */}
-        <div className="relative h-px bg-gray-700 overflow-hidden">
+        <div className="relative h-px bg-border overflow-hidden">
           <div 
-            className={`absolute top-0 left-0 h-full bg-gradient-to-r from-pink-400 to-orange-500 transition-all duration-2000 ease-out ${
+            className={`absolute top-0 left-0 h-full bg-gradient-to-r from-primary to-primary/70 transition-all duration-2000 ease-out ${
               animationStarted ? 'w-full' : 'w-0'
             }`}
           />
@@ -43,17 +44,17 @@ const AnimatedSection = ({ title, items, delay = 0 }) => {
                 <div 
                   className={`transition-all duration-300 ease-out ${
                     hoveredIndex === index 
-                      ? 'w-4 h-px bg-gray-400' 
-                      : 'w-2 h-2 bg-gray-400 rounded-full'
+                      ? 'w-4 h-px bg-muted-foreground' 
+                      : 'w-2 h-2 bg-muted-foreground rounded-full'
                   }`}
                 />
               </div>
               
               {/* Text */}
               <span 
-                className={`text-gray-400 transition-all duration-300 ease-out text-sm ${
+                className={`text-muted-foreground transition-all duration-300 ease-out text-sm ${
                   hoveredIndex === index 
-                    ? 'text-white transform translate-x-2' 
+                    ? 'text-foreground transform translate-x-2' 
                     : ''
                 }`}
               >
@@ -62,9 +63,9 @@ const AnimatedSection = ({ title, items, delay = 0 }) => {
             </div>
             
             {/* Individual item separator line */}
-            <div className="relative mt-4 h-px bg-gray-800 overflow-hidden">
+            <div className="relative mt-4 h-px bg-border overflow-hidden">
               <div 
-                className={`absolute top-0 left-0 h-full bg-gradient-to-r from-pink-400/30 to-orange-500/30 transition-all duration-500 ease-out ${
+                className={`absolute top-0 left-0 h-full bg-gradient-to-r from-primary/30 to-primary/20 transition-all duration-500 ease-out ${
                   hoveredIndex === index ? 'w-full' : 'w-0'
                 }`}
               />
@@ -126,58 +127,74 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="bg-gray-950 min-h-screen py-16 px-8">
+    <div className="pt-20 pb-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background  to-blueish/50" >
       <div className="max-w-7xl mx-auto">
         {/* Main heading */}
-        <div className="text-center mb-16">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="relative inline-block">
-            <h1 className="text-white text-5xl font-light mb-6 tracking-wide">
+            <h1 className="text-foreground text-5xl font-bold mb-6 tracking-wide font-haptik">
               WHY CHOOSE US
             </h1>
             
             {/* Main decorative line */}
-            <div className="relative h-px bg-gray-700 overflow-hidden mx-auto w-64">
+            <div className="relative h-px bg-border overflow-hidden mx-auto w-64">
               <div 
-                className={`absolute top-0 left-0 h-full bg-gradient-to-r from-pink-500 via-purple-500 to-orange-500 transition-all duration-3000 ease-out ${
+                className={`absolute top-0 left-0 h-full bg-gradient-to-r from-primary via-primary/80 to-primary/60 transition-all duration-3000 ease-out ${
                   mainAnimationStarted ? 'w-full' : 'w-0'
                 }`}
               />
             </div>
           </div>
           
-          <p className="text-gray-400 text-lg mt-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-muted-foreground text-lg mt-8 max-w-3xl mx-auto leading-relaxed">
             Partner with the leading digital influencer marketing agency that transforms 
             brands through authentic storytelling and strategic partnerships.
           </p>
-        </div>
+        </motion.div>
 
         {/* Sections grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 justify-items-center">
           {sectionsData.map((section, index) => (
-            <AnimatedSection
+            <motion.div
               key={index}
-              title={section.title}
-              items={section.items}
-              delay={index * 200}
-            />
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
+            >
+              <AnimatedSection
+                title={section.title}
+                items={section.items}
+                delay={index * 200}
+              />
+            </motion.div>
           ))}
         </div>
 
         {/* Bottom CTA section */}
-        <div className="text-center mt-20">
+        <motion.div 
+          className="text-center mt-20"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
           <div className="relative inline-block group cursor-pointer">
-            <div className="bg-gradient-to-r from-pink-500 to-orange-500 p-px rounded-lg">
-              <div className="bg-gray-950 px-8 py-4 rounded-lg group-hover:bg-gray-900 transition-colors duration-300">
-                <span className="text-white font-medium tracking-wide">
+            <div className="bg-gradient-to-r from-primary to-primary/80 p-px rounded-lg">
+              <div className="bg-background px-8 py-4 rounded-lg group-hover:bg-muted transition-colors duration-300">
+                <span className="text-foreground font-medium tracking-wide">
                   Start Your Campaign Today
                 </span>
               </div>
             </div>
             
             {/* CTA underline animation */}
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 group-hover:w-full h-px bg-gradient-to-r from-pink-500 to-orange-500 transition-all duration-500 ease-out" />
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 group-hover:w-full h-px bg-gradient-to-r from-primary to-primary/80 transition-all duration-500 ease-out" />
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
