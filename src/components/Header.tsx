@@ -5,7 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { useTheme } from "next-themes"
 import { motion, useScroll, useTransform } from "framer-motion"
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline"
 
 const links = [
   {
@@ -94,7 +93,7 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        <div className="flex flex-1 justify-end">
+        {/* <div className="flex flex-1 justify-end">
           {mounted && (
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -103,7 +102,7 @@ export default function Header() {
               {theme === "dark" ? <SunIcon className="h-5 w-5" /> : <MoonIcon className="h-5 w-5" />}
             </button>
           )}
-        </div>
+        </div> */}
       </nav>
     </motion.header>
   )

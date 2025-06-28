@@ -22,7 +22,7 @@ body {
 
 @layer components {
   .text-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #494848f8 0%, #6b8484 50%,  #919191 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;

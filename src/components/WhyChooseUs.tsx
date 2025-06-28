@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
+import AnimatedButton from './ui/animated-button';
 
 const AnimatedSection = ({ title, items, delay = 0 } : {title : string, items : string[], delay : number}) => {
   const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
@@ -176,25 +177,9 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Bottom CTA section */}
-        <motion.div 
-          className="text-center mt-20"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <div className="relative inline-block group cursor-pointer">
-            <div className="bg-gradient-to-r from-primary to-primary/80 p-px rounded-lg">
-              <div className="bg-background px-8 py-4 rounded-lg group-hover:bg-muted transition-colors duration-300">
-                <span className="text-foreground font-medium tracking-wide">
-                  Start Your Campaign Today
-                </span>
-              </div>
-            </div>
-            
-            {/* CTA underline animation */}
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 group-hover:w-full h-px bg-gradient-to-r from-primary to-primary/80 transition-all duration-500 ease-out" />
-          </div>
-        </motion.div>
+        <div className='w-full flex justify-center'>
+          <AnimatedButton title="Start Your Campaign Today" />
+        </div>
       </div>
     </div>
   );
