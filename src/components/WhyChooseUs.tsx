@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import AnimatedButton from './ui/animated-button';
+import GiganticHeader from './GiganticHeader';
 
 const AnimatedSection = ({ title, items, delay = 0 } : {title : string, items : string[], delay : number}) => {
   const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);
@@ -138,9 +139,10 @@ const WhyChooseUs = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="relative inline-block">
-            <h1 className="text-zinc-700 text-5xl font-bold mb-6 tracking-wide font-haptik">
+            <h1 className="text-zinc-700 text-4xl sm:text-5xl md:text-7xl  font-bold mb-6 font-anton">
               WHY CHOOSE US
             </h1>
+            {/* <GiganticHeader title="WHY CHOOSE US" headerCSS="tracking- bg-gradient-to-r from-gray-900 via-gray-400 to-gray-700 bg-clip-text text-transparent"  /> */}
             
             {/* Main decorative line */}
             <div className="relative h-px bg-border overflow-hidden mx-auto w-64">

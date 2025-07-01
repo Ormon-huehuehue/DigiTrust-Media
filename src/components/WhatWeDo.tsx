@@ -14,7 +14,7 @@ export default function WhatWeDo() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-foreground mb-6 font-haptik">WHAT WE DO</h2>
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-bold text-foreground mb-6 font-anton leading-none tracking-wide">WHAT WE DO</h2>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
             {caption}
           </p>

@@ -12,7 +12,7 @@ export default function Hero() {
       <Boxes/>
       <div className="absolute inset-0 w-full h-full bg-slate-200 z-1 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
   
-      <div className="relative z-10 mx-auto max-w-7xl px-6 mt-[6rem] lg:mt-0 lg:py-20 py-2 lg:px-8 pointer-events-none">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 mt-[6rem] lg:mt-0 lg:py-20 lg:px-8 pointer-events-none">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <motion.h1
             className="lg:mt-10 mt-0 font-bold tracking-tight text-foreground text-5xl sm:text-6xl"

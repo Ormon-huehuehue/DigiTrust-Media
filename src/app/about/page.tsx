@@ -1,14 +1,28 @@
 'use client'
 
-import React from 'react';
+import LiquidCard from '@/components/LiquidCard'
+import React from 'react'
 import { motion } from 'framer-motion';
 import { ServiceCard } from '@/components/ServiceCard';
 import { FeatureCard } from '@/components/FeatureCard';
 import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
 import { cn } from '@/lib/utils';
+import GiganticHeader from '@/components/GiganticHeader'
+import Founders from '@/components/Founders';
+import CampaignProcess from '@/components/CampaignProcess';
 
 
 const Page = () => {
+
+    const headerData = {
+        title : "ABOUT US",
+        description : "DigiTrust Media is a Delhi-based influencer marketing agency helping brands grow through authentic creator-led campaigns. We blend culture, content, and strategy to drive impact and measurable digital growth."
+    }
+
+    const ourTeamHeaderData = {
+      title : "FOUNDERS",
+      description : "Our story began in Delhi with a simple belief: the future of marketing is human. Since then, DigiTrust Media has grown into a dynamic team of strategists, creators, and digital marketers driving campaigns that spark genuine influence and brand love. We're content-first and data-backed, combining creative storytelling with cutting-edge tools—including AI—to craft experiences that resonate. From influencer activations to full-funnel strategies, we deliver impact where culture, community, and conversion meet."
+  }
 
   const servicesData = [
     {
@@ -98,7 +112,7 @@ const Page = () => {
         duration={3}
         repeatDelay={1}
         className={cn(
-          "fixed inset-0 w-full h-full z-[-1] opacity-80 pointer-events-none [mask-image:radial-gradient(800px_circle_at_center,white,transparent)]"
+          "fixed inset-0 w-full h-full z-[-1] opacity-80 pointer-events-none skew-y-12 [mask-image:radial-gradient(800px_circle_at_center,white,transparent)]"
         )}
       />
 
@@ -113,118 +127,30 @@ const Page = () => {
       </div>
 
       {/* Header */}
-      <motion.header 
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="relative z-10 p-8 lg:p-12"
-      >
-        <div className="max-w-7xl mx-auto">
-          <motion.h1 
-            className="text-[4rem] lg:text-[8rem] xl:text-[12rem] font-light mb-8 leading-none tracking-tight font-mono text-blue-900"
-            style={{ fontFamily: "'Helvetica Neue', 'Arial', sans-serif" }}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 1.2, 
-              delay: 0.2,
-              ease: [0.25, 0.46, 0.45, 0.94]
-            }}
-            whileHover={{ 
-              y: -10,
-              transition: { duration: 0.3, ease: "easeOut" } 
-            }}
-          >
-            <motion.span
-              className="inline-block bg-gradient-to-r from-blue-900 via-blue-400 to-blue-700 bg-clip-text text-transparent font-anton"
-              animate={{ 
-                backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "linear"
-              }}
-              style={{
-                backgroundSize: "200% 200%"
-              }}
-            >
-              Services
-            </motion.span>
-          </motion.h1>
-          <motion.p 
-            className="text-xl lg:text-2xl text-blue-800 max-w-4xl leading-relaxed"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            We are your all-in-one destination for everything related to creator marketing, celebrity/influencer partnerships, and memorable brand experiences.
-          </motion.p>
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 my-20">
+        <GiganticHeader title={headerData.title} description={headerData.description}/>
+      </div>
+
+      {/* Founders Section */}
+      <section className="relative py-0 sm:py-0 mb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8">
+          <div className="bg-white/80 rounded-3xl shadow-lg border border-blue-100 py-16 px-4 sm:px-12">
+            <GiganticHeader title={ourTeamHeaderData.title} headerCSS="tracking- bg-gradient-to-r from-gray-900 via-gray-400 to-gray-700 bg-clip-text text-transparent"  />
+            <div className='text-gray-500 font-medium '>
+              {ourTeamHeaderData.description} 
+            </div>
+            <div className="mt-16">
+              <Founders/>
+            </div>
+          </div>
         </div>
-      </motion.header>
+      </section>
 
       {/* Main Content */}
-      <main className="relative z-10 px-8 lg:px-12">
-      <div className="max-w-7xl mx-auto space-y-20">
-          {servicesData.map((service, idx) => (
-            <ServiceCard
-              key={service.title}
-              title={service.title}
-              subtitle={service.subtitle}
-              description={service.description}
-              services={service.services}
-              delay={0.2 * idx}
-            />
-          ))}
-
-          {/* Features Grid */}
-          <motion.section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20"
-          >
-            {features.map((feature, index) => (
-              <div key={feature.title} className="bg-white/90 border border-blue-50 text-blue-900 shadow rounded-2xl">
-                <FeatureCard
-                  title={feature.title}
-                  description={feature.description}
-                  delay={index * 0.1}
-                  className=""
-                />
-              </div>
-            ))}
-          </motion.section>
-
-          {/* Bottom CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center py-10"
-          >
-            <motion.h2 
-              className="text-3xl lg:text-5xl font-bold mb-6 text-blue-900"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Game-changing partnerships that drive results.
-            </motion.h2>
-            <motion.p 
-              className="text-xl text-blue-800 max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              We're incredibly lucky to partner with visionary leaders and brands from across the globe.
-            </motion.p>
-          </motion.div>
-        </div>
+      <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8">
+        <section className="bg-white/80 rounded-3xl shadow-lg border border-blue-100 py-16 px-4 sm:px-12 mb-24">
+          <CampaignProcess giganticHeader={false} />
+        </section>
       </main>
     </div>
   );

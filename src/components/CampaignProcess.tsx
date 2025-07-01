@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react"
 import { motion, useScroll, useTransform, useSpring, useInView } from "framer-motion"
+import GiganticHeader from "./GiganticHeader"
 
 const campaignProcess = [
   {
@@ -54,7 +55,7 @@ const ProcessIcon = ({ step }: { step: string }) => (
   </div>
 )
 
-export default function CampaignProcess() {
+export default function CampaignProcess({giganticHeader = false} : {giganticHeader? : boolean}) {
   const [expandedStep, setExpandedStep] = useState<number | null>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
@@ -85,7 +86,23 @@ export default function CampaignProcess() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-3xl font-extrabold text-foreground sm:text-4xl md:text-5xl lg:text-6xl font-haptik">HOW WE WORK</h2>
+        
+
+          {giganticHeader ? <GiganticHeader title="HOW WE WORK" headerCSS="bg-gradient-to-r from-gray-900 via-gray-400 to-gray-700 bg-clip-text text-transparent"/> :   <motion.h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold   font-anton tracking-wide"
+            animate={{ 
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            style={{
+              backgroundSize: "200% 200%"
+            }}
+            >HOW WE WORK
+          </motion.h2>}
+          
           <p className="mt-4 text-lg text-muted-foreground">Our proven 6-step process to create successful influencer marketing campaigns</p>
         </motion.div>
 

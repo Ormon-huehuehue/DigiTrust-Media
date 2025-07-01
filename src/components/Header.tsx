@@ -9,16 +9,12 @@ import { motion, useScroll, useTransform } from "framer-motion"
 const links = [
   {
     name: "SERVICES",
-    url: "Services"
+    url: "services"
   },
   {
     name: "ABOUT",
-    url: ""
+    url: "about"
   },
-  {
-    name: "CONTACT",
-    url: ""
-  }
 ]
 
 export default function Header() {
@@ -72,7 +68,7 @@ export default function Header() {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Digitrust Media</span>
             <Image
-              className="h-10 w-auto"
+              className="h-12 w-auto"
               src="/Logo.png"
               alt=""
               width = {0}
