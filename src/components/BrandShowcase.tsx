@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, animate } from "framer-motion"
 import Image from 'next/image';
+import { BrandCarousel } from './BrandCarousel';
 
 const brands = [
   {
@@ -105,7 +106,7 @@ const BrandShowcase = () => {
   };
 
   return (
-    <div className="h-auto bg-[#e7ebf1]/70 p-8 border-2 border-gray-300">
+    <div className="h-auto bg-[#e7ebf1]/70 py-8 px-3 border-2 border-gray-300">
       <motion.div 
         className="max-w-2xl mx-auto lg:max-w-7xl"
         variants={containerVariants}
@@ -159,7 +160,7 @@ const BrandShowcase = () => {
           ))}
         </div>
         <div className='md:hidden'>
-          <BrandCarousel />
+          <BrandCarousel data={brands} />
         </div>
       </motion.div>
     </div>
@@ -169,80 +170,80 @@ const BrandShowcase = () => {
 export default BrandShowcase;
 
 
-export function BrandCarousel() {
-  const [width, setWidth] = useState(0)
-  const carousel = useRef<HTMLDivElement>(null)
-  const x = useMotionValue(0)
+// export function BrandCarousel() {
+//   const [width, setWidth] = useState(0)
+//   const carousel = useRef<HTMLDivElement>(null)
+//   const x = useMotionValue(0)
 
-  useEffect(() => {
-    if (carousel.current) {
-      const scrollWidth = carousel.current.scrollWidth
-      const offsetWidth = carousel.current.offsetWidth
-      setWidth(scrollWidth - offsetWidth)
-    }
-  }, [])
+//   useEffect(() => {
+//     if (carousel.current) {
+//       const scrollWidth = carousel.current.scrollWidth
+//       const offsetWidth = carousel.current.offsetWidth
+//       setWidth(scrollWidth - offsetWidth)
+//     }
+//   }, [])
 
 
-  const handleDragEnd = () => {
-    const currentX = x.get()
+//   const handleDragEnd = () => {
+//     const currentX = x.get()
 
-    if (currentX > 0) {
-      // Animate back to left boundary
-      animate(x, 0, { type: "spring", stiffness: 300, damping: 30 })
-    } else if (currentX < -width) {
-      // Animate back to right boundary
-      animate(x, -width, { type: "spring", stiffness: 300, damping: 30 })
-    }
-  }
+//     if (currentX > 0) {
+//       // Animate back to left boundary
+//       animate(x, 0, { type: "spring", stiffness: 300, damping: 30 })
+//     } else if (currentX < -width) {
+//       // Animate back to right boundary
+//       animate(x, -width, { type: "spring", stiffness: 300, damping: 30 })
+//     }
+//   }
 
-  return (
-    <div className="max-w-7xl mx-auto">
-      <motion.div ref={carousel} className="cursor-grab overflow-hidden">
-        <motion.div
-          drag="x"
-          dragConstraints={{ left: -width, right: 0 }}
-          whileTap={{ cursor: "grabbing" }}
-          style={{ x }}
-          onDragEnd={handleDragEnd}
-          className="flex"
-        >
-        { brands.map((brand, index) => (
-            <motion.div
-              key={index}
-              className="min-w-[30rem] h-[18rem] p-8 m-4 bg-background rounded-sm shadow-lg flex flex-col justify-between hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
-            >
-              <div>
-                <div className="mb-5">
-                  { brand.logoUrl.length > 0 ? 
-                      <Image 
-                        src= {brand.logoUrl}
-                        alt="Brand Icon"
-                        width = {0}
-                        height={0}
-                        className="ml-2 w-auto h-[50px]"
-                      /> : 
-                      <h2 className= 'text-foreground'>
-                        {brand.logo}
-                      </h2>
-                  }
-                </div>
-                <p className="text-muted-foreground">{brand.description}</p>
-              </div>
-              <div className="mt-4">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary hover:underline"
-                >
-                  Learn more →
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
-    </div>
-  )
-}
+//   return (
+//     <div className="max-w-7xl mx-auto">
+//       <motion.div ref={carousel} className="cursor-grab overflow-hidden">
+//         <motion.div
+//           drag="x"
+//           dragConstraints={{ left: -width, right: 0 }}
+//           whileTap={{ cursor: "grabbing" }}
+//           style={{ x }}
+//           onDragEnd={handleDragEnd}
+//           className="flex"
+//         >
+//         { brands.map((brand, index) => (
+//             <motion.div
+//               key={index}
+//               className="min-w-[30rem] h-[18rem] p-8 m-4 bg-background rounded-sm shadow-lg flex flex-col justify-between hover-lift transition-all duration-300 ease-in-out border-2 border-transparent hover:border-primary/10"
+//             >
+//               <div>
+//                 <div className="mb-5">
+//                   { brand.logoUrl.length > 0 ? 
+//                       <Image 
+//                         src= {brand.logoUrl}
+//                         alt="Brand Icon"
+//                         width = {0}
+//                         height={0}
+//                         className="ml-2 w-auto h-[50px]"
+//                       /> : 
+//                       <h2 className= 'text-foreground'>
+//                         {brand.logo}
+//                       </h2>
+//                   }
+//                 </div>
+//                 <p className="text-muted-foreground">{brand.description}</p>
+//               </div>
+//               <div className="mt-4">
+//                 <a
+//                   href="#"
+//                   target="_blank"
+//                   rel="noopener noreferrer"
+//                   className="text-primary hover:underline"
+//                 >
+//                   Learn more →
+//                 </a>
+//               </div>
+//             </motion.div>
+//           ))}
+//         </motion.div>
+//       </motion.div>
+//     </div>
+//   )
+// }
 

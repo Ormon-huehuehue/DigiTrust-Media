@@ -133,3 +133,23 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Marquee animation for InfiniteMovingCards */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scroller ul.animate-scroll {
+  animation: scroll var(--animation-duration, 20s) linear infinite;
+  animation-direction: var(--animation-direction, forwards);
+}
+
+.scroller {
+  overflow: hidden;
+  position: relative;
+}

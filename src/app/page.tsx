@@ -22,7 +22,7 @@ export default function Home() {
     
       {/* <FeatureCarousel /> */}
       <PortfolioGrid />
-      <section className="bg-white/80 rounded-3xl  border border-blue-100 py-16 px-4 sm:px-12">
+      <section className="bg-white/80 border border-blue-100 py-16 px-4 sm:px-12">
           <CampaignProcess giganticHeader={false} />
       </section>
       {/* <Marquee /> */}

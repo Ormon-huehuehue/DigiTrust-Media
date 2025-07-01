@@ -188,7 +188,7 @@ function ProcessStep({
         whileTap={{ scale: 0.98 }}
         onClick={onToggle}
       >
-        <div className="p-6 bg-card rounded-lg shadow-md border border-border hover:border-primary/20 transition-colors">
+        <div className="p-6 bg-card  rounded-lg shadow-md border border-border hover:border-primary/20 transition-colors">
           <span className="font-bold text-primary text-sm">{step.step}</span>
           <h3 className="text-lg font-semibold mb-2 text-foreground">{step.title}</h3>
           <p className="text-muted-foreground text-sm">{step.description}</p>
