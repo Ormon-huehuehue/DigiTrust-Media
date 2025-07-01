@@ -63,7 +63,8 @@ module.exports = {
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
-        haptik : ["gt-haptik", "sans-serif"]
+        haptik : ["gt-haptik", "sans-serif"],
+        anton : ["var(--font-anton)", ...fontFamily.sans]
       },
       keyframes: {
         "accordion-down": {

@@ -9,37 +9,62 @@ import { cn } from '@/lib/utils';
 
 
 const Page = () => {
-  const revolveServices = [
-    {
-      title: "Strategy & Content",
-      items: ["Brand Positioning", "Brand Messaging", "Employer Branding", "Digital Strategy"]
-    },
-    {
-      title: "Identity & Branding",
-      items: ["Brand Identity", "Content Strategy", "Visual Direction", "Guidelines & Systems"]
-    },
-    {
-      title: "Websites & Apps",
-      items: ["UX & UI Design", "Prototyping", "Web & App Development", "No-code Websites (Framer, Webflow)"]
-    },
-    {
-      title: "Ongoing",
-      items: ["Quality Assurance", "Maintenance & Support", "SEO Audits & Optimization", "Performance Monitoring"]
-    }
-  ];
 
-  const rydeServices = [
+  const servicesData = [
     {
-      title: "Top Of Funnel",
-      items: ["Paid Social (Ads)", "Paid Search (PPC)", "Creative Ads Strategy", "Campaign Launch Strategy", "SEO Strategies", "Programmatic", "Influencer Marketing", "Non-Brand Search (Amazon)"]
+      title: "Creator Activation",
+      subtitle: "End-to-End Creator Campaigns",
+      description:
+        "We identify the right creators and match them perfectly to your brand to effectively spread your message to your target audience. From creating bespoke briefs to managing and tracking creator campaigns, we are your all-in-one destination for everything related to creator marketing. Our work ranges from short-term creator campaigns for brand awareness and launches, to long term ambassadorship and always-on creator programmes to build brand love and loyalty.",
+      services: [
+        {
+          title: "What We Offer",
+          items: [
+            "Creator Discovery & Vetting",
+            "Bespoke Brief Creation",
+            "Campaign Management",
+            "Performance Tracking",
+            "Brand Awareness & Launches",
+            "Ambassadorships & Always-on Programmes"
+          ]
+        }
+      ]
     },
     {
-      title: "Middle Of Funnel",
-      items: ["Social Media", "Content Marketing", "Affiliate Marketing", "Branded Search (PPC)", "Branded Search (Amazon)"]
+      title: "Sourcing",
+      subtitle: "Celebrity & Influencer Partnerships",
+      description:
+        "The most impactful marketing approach for endorsing your brand involves tapping into the widespread popularity and substantial influence of renowned celebrities and content creators. Elevate your brand's credibility, boost awareness, and stimulate both conversations and conversions by leveraging the popularity of well-known public figures.",
+      services: [
+        {
+          title: "What We Offer",
+          items: [
+            "Celebrity Endorsements",
+            "Influencer Sourcing",
+            "Negotiation & Contracting",
+            "Brand-Influencer Alignment",
+            "Awareness & Conversion Campaigns"
+          ]
+        }
+      ]
     },
     {
-      title: "Bottom Of Funnel",
-      items: ["CRO", "Email Marketing", "Organic", "Social Ads (Retargeting)", "Partnerships", "Creative", "Marketing Ops"]
+      title: "Events and Experiences",
+      subtitle: "Memorable Brand Moments",
+      description:
+        "From guest list management to event conceptualisation and curation, we offer everything you need to make your event a memorable experience, and beyond.",
+      services: [
+        {
+          title: "What We Offer",
+          items: [
+            "Event Conceptualisation",
+            "Guest List Management",
+            "Event Curation",
+            "On-ground Execution",
+            "Influencer & Celebrity Attendance"
+          ]
+        }
+      ]
     }
   ];
 
@@ -96,7 +121,7 @@ const Page = () => {
       >
         <div className="max-w-7xl mx-auto">
           <motion.h1 
-            className="text-[8rem] lg:text-[14rem] xl:text-[18rem] font-light mb-8 leading-none tracking-tight font-mono text-blue-900"
+            className="text-[4rem] lg:text-[8rem] xl:text-[12rem] font-light mb-8 leading-none tracking-tight font-mono text-blue-900"
             style={{ fontFamily: "'Helvetica Neue', 'Arial', sans-serif" }}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -111,12 +136,12 @@ const Page = () => {
             }}
           >
             <motion.span
-              className="inline-block bg-gradient-to-r from-blueish via-blue-400 to-blue-700 bg-clip-text text-transparent font-anton"
+              className="inline-block bg-gradient-to-r from-blue-900 via-blue-400 to-blue-700 bg-clip-text text-transparent font-anton"
               animate={{ 
                 backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
               }}
               transition={{
-                duration: 3,
+                duration: 10,
                 repeat: Infinity,
                 ease: "linear"
               }}
@@ -133,72 +158,24 @@ const Page = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Our Flexible—Agency Model helps Future-First Companies to radically differentiate & deliver on growth throughout their brand journey.
+            We are your all-in-one destination for everything related to creator marketing, celebrity/influencer partnerships, and memorable brand experiences.
           </motion.p>
         </div>
       </motion.header>
 
       {/* Main Content */}
-      <main className="relative z-10 px-8 lg:px-12 pb-20">
-        <div className="max-w-7xl mx-auto space-y-20">
-          {/* Revolve Service */}
-         
+      <main className="relative z-10 px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto space-y-20">
+          {servicesData.map((service, idx) => (
             <ServiceCard
-              title="Revolve"
-              subtitle="Full—Digital Design & Development"
-              description="Scalable, adjustable design & digital teams working with you in monthly cycles. Aligning with Visionary Founders, Leadership, Marketing and Product teams. The intersection of strategic guidance, brand activations, brand rollouts and digital experiences. Driving value where you need it, and when you need it. REVOLVE is here to help you evolve and scale your brand well into the future."
-              services={revolveServices}
-              delay={0.2}
+              key={service.title}
+              title={service.title}
+              subtitle={service.subtitle}
+              description={service.description}
+              services={service.services}
+              delay={0.2 * idx}
             />
-         
-
-          {/* Ryde Service */}
-        
-            <ServiceCard
-              title="Ryde"
-              subtitle="AI—Enhanced Digital Marketing"
-              description="Built for the modern Tech, D2C, and eCommerce brand. Ready to dive deeper than ever before into your cross-channel digital marketing campaigns and strategies. Taking a holistic view on what 'growth' means, enabling your CRO, Marketing, Product, and Executive Teams to create micro – macro – and – massive impact at scale. The epic journey of any great brand and team begins with a single, extraordinary RYDE."
-              services={rydeServices}
-              delay={0.4}
-            />
-        
-
-          {/* Custom Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r bg-white rounded-3xl p-12 text-center shadow-lg"
-          >
-            <motion.h2 
-              className="text-4xl lg:text-6xl font-bold mb-6 text-blue-900"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              Custom
-            </motion.h2>
-            <motion.p 
-              className="text-xl lg:text-2xl mb-8 text-blue-700"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
-            >
-              Need more? We'll create a Program that's just right for you.
-            </motion.p>
-            <motion.p 
-              className="text-lg text-blue-800 max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.6 }}
-              viewport={{ once: true }}
-            >
-              Precision-crafted solutions tailored to your unique brand needs. Elevating your digital experience and evolving your digital marketing strategies to drive radical results.
-            </motion.p>
-          </motion.div>
+          ))}
 
           {/* Features Grid */}
           <motion.section
@@ -206,15 +183,15 @@ const Page = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20"
           >
             {features.map((feature, index) => (
-              <div key={feature.title} >
+              <div key={feature.title} className="bg-white/90 border border-blue-50 text-blue-900 shadow rounded-2xl">
                 <FeatureCard
                   title={feature.title}
                   description={feature.description}
                   delay={index * 0.1}
-                  className="bg-white/90 border border-blue-50 text-blue-900 shadow rounded-2xl"
+                  className=""
                 />
               </div>
             ))}
@@ -226,7 +203,7 @@ const Page = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center py-20"
+            className="text-center py-10"
           >
             <motion.h2 
               className="text-3xl lg:text-5xl font-bold mb-6 text-blue-900"
@@ -244,7 +221,7 @@ const Page = () => {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              We're incredibly lucky to partner with visionary leaders and brands from across the globe. Here are some Recent Wins:
+              We're incredibly lucky to partner with visionary leaders and brands from across the globe.
             </motion.p>
           </motion.div>
         </div>
