@@ -44,7 +44,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="bg-gradient-to-tl from-background via-muted/10 to-background py-20">
+    <section className="bg-white py-20 w-1/2 border-2 border-gray-300 rounded-lg shadow-lg">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

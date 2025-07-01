@@ -107,19 +107,10 @@ const Page = () => {
           "fixed inset-0 w-full h-full z-[-1] opacity-80 pointer-events-none skew-y-12 [mask-image:radial-gradient(800px_circle_at_center,white,transparent)]"
         )}
       />
-
-      {/* Animated Background (mouse-follow effect) */}
-      <div className="fixed inset-0 opacity-20 z-0 pointer-events-none">
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            background: `radial-gradient(600px , blueish, transparent 40%)` // blueish
-          }}
-        />
-      </div>
-
       {/* Header */}
-     <GiganticHeader title={headerData.title} description = {headerData.description} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 my-16 md:my-20">
+        <GiganticHeader title={headerData.title} description={headerData.description} />
+      </div>
 
       {/* Main Content */}
       <main className="relative z-10 px-8 lg:px-12">
@@ -144,7 +135,7 @@ const Page = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20"
           >
             {features.map((feature, index) => (
-              <div key={feature.title} className="bg-white/90 border border-blue-50 text-blue-900 shadow rounded-2xl">
+              <div key={feature.title} className="bg-white/90 border border-blue-50 shadow rounded-2xl">
                 <FeatureCard
                   title={feature.title}
                   description={feature.description}

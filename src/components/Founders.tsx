@@ -19,9 +19,9 @@ const Founders = () => {
     return (
         <div className=' px-5 flex  flex-col md:flex-row lg:flex-row gap-10 my-10 justify-center items-center'>
             {foundersData.map((founder, index)=>(
-                <div className="">
+               
                     <LiquidCard founder={founder} key={index}/>
-                </div>
+               
             ))}
         </div>
     )

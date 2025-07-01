@@ -12,9 +12,9 @@ const GiganticHeader = ({title, description, headerCSS="tracking-tight bg-gradie
     transition={{ duration: 0.8 }}
     className="relative z-10"
   >
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto text-center sm:text-start">
       <motion.h1 
-        className="text-[4rem] lg:text-[8rem] xl:text-[12rem] mb-8 leading-none font-anton"
+        className="text-[5rem] lg:text-[8rem] xl:text-[12rem] mb-8 leading-none font-anton"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ 

@@ -22,8 +22,8 @@ export const FeatureCard = ({ title, description, delay = 0, className = "" } : 
         transition={{ duration: 0.6, delay }}
         className={`bg-white/80 rounded-2xl p-8  transition-all duration-300 ${className}`}
       >
-        <h3 className="text-blue-900 font-bold text-xl mb-3">{title}</h3>
-        <p className="text-blue-800 leading-relaxed">{description}</p>
+        <h3 className="text-foreground font-bold text-xl mb-3">{title}</h3>
+        <p className="text-gray-500 leading-relaxed">{description}</p>
       </motion.div>
     );
   };

@@ -10,9 +10,17 @@ import { cn } from '@/lib/utils';
 import GiganticHeader from '@/components/GiganticHeader'
 import Founders from '@/components/Founders';
 import CampaignProcess from '@/components/CampaignProcess';
+import AnimatedButton from '@/components/ui/animated-button';
+import { useRouter } from 'next/navigation';
 
 
 const Page = () => {
+
+  const router = useRouter();
+
+  const onClickHandler = () =>{
+    router.push('/services');
+  }
 
     const headerData = {
         title : "ABOUT US",
@@ -127,7 +135,7 @@ const Page = () => {
       </div>
 
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 my-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 my-16 md:my-20">
         <GiganticHeader title={headerData.title} description={headerData.description}/>
       </div>
 
@@ -152,6 +160,10 @@ const Page = () => {
           <CampaignProcess giganticHeader={false} />
         </section>
       </main>
+
+      <div className='flex justify-center items-center'>
+        <AnimatedButton title='Our Services' onClick={onClickHandler}/>
+      </div>
     </div>
   );
 };

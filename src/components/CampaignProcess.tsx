@@ -73,7 +73,7 @@ export default function CampaignProcess({giganticHeader = false} : {giganticHead
   const backgroundOpacity = useTransform(scrollYProgress, [0, 1], [0, 0.8])
 
   return (
-    <section ref={containerRef} className="py-20 overflow-hidden relative">
+    <section ref={containerRef} className="md:py-5 mb-20 overflow-hidden relative">
       {/* Scroll-triggered background overlay */}
       <motion.div 
         className="absolute inset-0 bg-gradient-to-br from-background via-muted/15 to-background pointer-events-none"

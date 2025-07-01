@@ -31,7 +31,7 @@ export const ServiceCard = ({ title, subtitle, description, services, delay = 0,
       className={`bg-white/90 border border-blue-50 rounded-3xl p-8 lg:p-12 shadow-md hover:shadow-lg transition-all duration-500 ${className}`}
     >
       <motion.h2 
-        className="text-4xl lg:text-6xl font-bold text-blue-900 mb-4"
+        className="text-4xl lg:text-6xl font-bold text-foreground mb-4"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6, delay: delay + 0.2 }}
@@ -40,7 +40,7 @@ export const ServiceCard = ({ title, subtitle, description, services, delay = 0,
       </motion.h2>
       
       <motion.p 
-        className="text-blue-700 text-xl lg:text-2xl font-medium mb-6"
+        className="text-muted-foreground text-xl lg:text-2xl font-medium mb-6"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6, delay: delay + 0.3 }}
@@ -49,7 +49,7 @@ export const ServiceCard = ({ title, subtitle, description, services, delay = 0,
       </motion.p>
       
       <motion.p 
-        className="text-blue-800 text-lg leading-relaxed mb-10"
+        className="text-gray-500 text-lg leading-relaxed mb-10"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 0.6, delay: delay + 0.4 }}
@@ -66,7 +66,7 @@ export const ServiceCard = ({ title, subtitle, description, services, delay = 0,
             transition={{ duration: 0.5, delay: delay + 0.5 + (index * 0.1) }}
             className="space-y-4"
           >
-            <h4 className="text-blue-900 font-bold text-lg border-b border-blue-200 pb-2">
+            <h4 className="text-foreground font-bold text-lg border-b border-gray-200 pb-2">
               {category.title}
             </h4>
             <ul className="space-y-2">
@@ -76,7 +76,7 @@ export const ServiceCard = ({ title, subtitle, description, services, delay = 0,
                   initial={{ opacity: 0 }}
                   animate={isInView ? { opacity: 1 } : { opacity: 0 }}
                   transition={{ duration: 0.3, delay: delay + 0.6 + (index * 0.1) + (itemIndex * 0.05) }}
-                  className="text-blue-700 hover:text-blue-500 transition-colors duration-200 cursor-pointer"
+                  className="text-gray-500 hover:text-gray-700 transition-colors duration-200 font-medium cursor-pointer"
                 >
                   {item}
                 </motion.li>

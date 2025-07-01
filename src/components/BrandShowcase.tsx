@@ -105,7 +105,7 @@ const BrandShowcase = () => {
   };
 
   return (
-    <div className="h-auto bg-gray-200 p-8 border-2 border-gray-300">
+    <div className="h-auto bg-[#e7ebf1]/70 p-8 border-2 border-gray-300">
       <motion.div 
         className="max-w-2xl mx-auto lg:max-w-7xl"
         variants={containerVariants}
