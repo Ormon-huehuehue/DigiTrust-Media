@@ -8,53 +8,62 @@ import { BrandCarousel } from './BrandCarousel';
 const brands = [
   {
     logo: "McDonald's",
-    logoUrl : "/brandLogos/McDonalds.png",
+    logoUrl: "/brandLogos/McDonalds.png",
     logoStyle: "font-bold italic text-4xl",
-    description: "Scaled Omnichannel Brand Ambassador and Community program and developed content for national campaigns."
+    description:
+      "Managed nationwide influencer activations and community programs to drive engagement and amplify brand reach."
   },
   {
     logo: "KFC",
-    logoUrl : "/brandLogos/KFC.png",
+    logoUrl: "/brandLogos/KFC.png",
     logoStyle: "font-light text-4xl tracking-wider",
-    description: "Enhanced luxury funnel messaging for e-commerce focused communities and audience segments."
+    description:
+      "Executed targeted influencer campaigns to boost online sales and connect with niche audience segments."
   },
   {
     logo: "Bombay Shaving Company",
-    logoUrl : "/brandLogos/bombayShavingCompany.png",
+    logoUrl: "/brandLogos/bombayShavingCompany.png",
     logoStyle: "font-bold text-3xl",
-    description: "Curated and executed national user generated content programs to drive national campaign virality."
+    description:
+      "Launched user-generated content campaigns that drove brand virality and strengthened community loyalty."
   },
   {
     logo: "Swati Cosmetics",
-    logoUrl : "/brandLogos/Swati.png",
+    logoUrl: "/brandLogos/Swati.png",
     logoStyle: "font-bold text-3xl",
-    description: "Developed partner opportunities and executed national expo messaging and expo activations."
+    description:
+      "Activated influencer partnerships and on-ground events to build brand presence at national expos."
   },
   {
     logo: "Carmate",
-    logoUrl : "/brandLogos/Carmate.png",
+    logoUrl: "/brandLogos/Carmate.png",
     logoStyle: "font-bold text-4xl",
-    description: "Developed partner opportunities and executed national expo messaging and expo activations."
+    description:
+      "Developed strategic collaborations and ran influencer-led campaigns to boost awareness at industry expos."
   },
   {
     logo: "Romeo Lane",
-    logoUrl : "/brandLogos/RomeoLane.png",
+    logoUrl: "/brandLogos/RomeoLane.png",
     logoStyle: "font-light text-3xl tracking-[0.3em]",
-    description: "BW Club, White club, Key Club, Aquila, Slique, Brown Club, Big Billers, Bergamo, Privee, Code, Cafe by Soul - 65th Avenue, Diablo, Romeo Lane, Knot, Air Anivory Cafe, W Vabian, Flos Cafe"
+    description:
+      "Worked with top nightlife and hospitality venues to amplify brand experiences across premium clubs and cafes."
   },
   {
     logo: "Diablo",
-    logoUrl : "/brandLogos/Diablo.png",
+    logoUrl: "/brandLogos/Diablo.png",
     logoStyle: "font-light text-3xl tracking-[0.3em]",
-    description: "BW Club, White club, Key Club, Aquila, Slique, Brown Club, Big Billers, Bergamo, Privee, Code, Cafe by Soul - 65th Avenue, Diablo, Romeo Lane, Knot, Air Anivory Cafe, W Vabian, Flos Cafe"
+    description:
+      "Partnered with leading clubs and luxury venues to create memorable influencer-led events and activations."
   },
   {
     logo: "AIR",
-    logoUrl : "/brandLogos/AIR.png",
+    logoUrl: "/brandLogos/AIR.png",
     logoStyle: "font-light text-3xl tracking-[0.3em]",
-    description: "BW Club, White club, Key Club, Aquila, Slique, Brown Club, Big Billers, Bergamo, Privee, Code, Cafe by Soul - 65th Avenue, Diablo, Romeo Lane, Knot, Air Anivory Cafe, W Vabian, Flos Cafe"
+    description:
+      "Collaborated with high-end cafes and lounges to deliver curated influencer experiences and brand takeovers."
   },
 ];
+
 
 
 const BrandShowcase = () => {

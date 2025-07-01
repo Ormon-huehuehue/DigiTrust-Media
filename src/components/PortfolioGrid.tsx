@@ -1,63 +1,6 @@
-"use client"
-
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import Image from "next/image"
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
-import GiganticHeader from "./GiganticHeader";
-
-const projects = [
-  {
-    id: 1,
-    title: "Minimalist Brand Identity",
-    description: "Clean and modern visual communication for a tech startup",
-    imageUrl: "/placeholder.svg?height=600&width=800",
-    category: "Branding",
-  },
-  {
-    id: 2,
-    title: "Sleek Web Experience",
-    description: "Elegant online presence for a luxury fashion brand",
-    imageUrl: "/placeholder.svg?height=800&width=600",
-    category: "Web Design",
-  },
-  {
-    id: 3,
-    title: "Intuitive Mobile App",
-    description: "User-friendly app design for a health and wellness company",
-    imageUrl: "/placeholder.svg?height=600&width=800",
-    category: "Mobile App",
-  },
-  {
-    id: 4,
-    title: "Elegant Digital Campaign",
-    description: "Sophisticated marketing strategy for a luxury automotive brand",
-    imageUrl: "/placeholder.svg?height=800&width=600",
-    category: "Digital Marketing",
-  },
-  {
-    id: 5,
-    title: "Refined UI/UX Design",
-    description: "Streamlined user interfaces for a financial services platform",
-    imageUrl: "/placeholder.svg?height=600&width=800",
-    category: "UI/UX",
-  },
-  {
-    id: 6,
-    title: "Minimalist Product Design",
-    description: "Sleek and functional design for a smart home device",
-    imageUrl: "/placeholder.svg?height=800&width=600",
-    category: "Product Design",
-  },
-]
-
-const categories = ["All", ...new Set(projects.map((project) => project.category))]
 
 export default function PortfolioGrid() {
-  const [filter, setFilter] = useState("All")
-
-  const filteredProjects = filter === "All" ? projects : projects.filter((project) => project.category === filter)
-
   return (
     <section className="py-20 bg-gradient-to-b from-blueish/50 via-muted/20 to-background ">
         <AppleCardsCarouselDemo/>
@@ -121,7 +64,7 @@ const DummyContent = () => {
 const data = [
   {
     category: "Branding",
-    title: "McDonald’s Community Program",
+    title: "McDonald’s Brand Ambassador Community",
     src: "/work/mcd.jpg",
     content: (
       <>
@@ -133,7 +76,7 @@ const data = [
   },
   {
     category: "Digital Strategy",
-    title: "KFC E-commerce Funnel Messaging",
+    title: "KFC Digital Funnel & Storytelling",
     src: "/work/kfc.jpg",
     content: (
       <>
@@ -163,7 +106,7 @@ const data = [
   },
   {
     category: "Influencer Marketing",
-    title: "SWATI Cosmetics Expo Buzz",
+    title: "SWATI Cosmetics Expo Activation",
     src: "/work/lenses.png",
     content: (
       <>
