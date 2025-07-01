@@ -68,7 +68,7 @@ export default function Header() {
           <Link href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Digitrust Media</span>
             <Image
-              className="h-12 w-auto"
+              className="md:h-12 h-8 w-auto"
               src="/Logo.png"
               alt=""
               width = {0}
@@ -76,7 +76,7 @@ export default function Header() {
             />
           </Link>
         </div>
-        <div className="flex gap-x-12">
+        <div className="flex md:gap-x-12 gap-x-2 md:mx-10 mx-2">
           {links.map((link, index) => (
             <Link
               key={index}
@@ -87,10 +87,10 @@ export default function Header() {
             </Link>
           ))}
         </div>
-        <div className="flex flex-1 justify-end">
+        <div className="flex justify-end">
           {mounted && (
             <button
-              className="rounded-md p-2 bg-primary/10 text-muted-foreground font-bold hover:scale-105 text-sm px-5 transition-all"
+              className="rounded-md p-2 bg-primary/10 text-muted-foreground font-bold hover:scale-105 md:text-sm text-[8px] px-5 transition-all"
             >
             CONTACT US
             </button>
