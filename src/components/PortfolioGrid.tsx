@@ -226,24 +226,6 @@ const data = [
     ),
   },
   {
-    category: "UGC Campaign",
-    title: "Bombay Shaving Company Creator Push",
-    src: "/work/shaving.jpg",
-    content: <DummyContent/>
-  },
-  {
-    category: "Influencer Marketing",
-    title: "SWATI Cosmetics Expo Buzz",
-    src: "/work/swati.png",
-    content: (
-      <>
-        <p>
-          Activated influencers during major beauty expos to increase product trials and in-store footfall for SWATI’s Nordic line.
-        </p>
-      </>
-    ),
-  },
-  {
     category: "Activation",
     title: "Carmate Auto Expo Launch",
     src: "/work/carmate.png",
@@ -256,9 +238,27 @@ const data = [
     ),
   },
   {
+    category: "UGC Campaign",
+    title: "Bombay Shaving Company Creator Push",
+    src: "/work/bombay_shaving_company.png",
+    content: <DummyContent/>
+  },
+  {
+    category: "Influencer Marketing",
+    title: "SWATI Cosmetics Expo Buzz",
+    src: "/work/lenses.png",
+    content: (
+      <>
+        <p>
+          Activated influencers during major beauty expos to increase product trials and in-store footfall for SWATI’s Nordic line.
+        </p>
+      </>
+    ),
+  },
+  {
     category: "Nightlife & Hospitality",
     title: "Romeo Lane Life Style Content",
-    src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=3000&auto=format&fit=crop",
+    src: "/work/bar.png",
     content: (
       <>
         <p>

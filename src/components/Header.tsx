@@ -5,12 +5,11 @@ import Link from "next/link"
 import Image from "next/image"
 import { useTheme } from "next-themes"
 import { motion, useScroll, useTransform } from "framer-motion"
-import AnimatedButton from "./ui/animated-button"
 
 const links = [
   {
-    name: "WORK",
-    url: ""
+    name: "SERVICES",
+    url: "Services"
   },
   {
     name: "ABOUT",
@@ -75,7 +74,7 @@ export default function Header() {
             <Image
               className="h-10 w-auto"
               src="/Logo.png"
-              alt="Flowers & Saints Logo"
+              alt=""
               width = {0}
               height = {0}
             />
@@ -86,8 +85,6 @@ export default function Header() {
             <Link
               key={index}
               href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-sm font-semibold leading-6 text-foreground hover:text-primary transition-colors"
             >
               {link.name}
