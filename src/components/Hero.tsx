@@ -39,16 +39,12 @@ export default function Hero() {
           >
             <a
               href=""
-              target="_blank"
-              rel="noopener noreferrer"
               className="apple-button"
             >
               Explore Our Work
             </a>
             <a
               href=""
-              target="_blank"
-              rel="noopener noreferrer"
               className="text-sm font-semibold leading-6 text-foreground"
             >
               Learn more <span aria-hidden="true">→</span>
@@ -64,8 +60,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <img
-            src="/Banner.png"
-            alt="Flowers & Saints design concept"
+            src="/Banner.webp"
+            alt="digitrust media banner"
             width={600}
             height={600}
             className="w-[500px] rounded-2xl"
@@ -81,7 +77,7 @@ export default function Hero() {
         >
           <div className="flex justify-center">
             <img
-              src="/Banner.png"
+              src="/Banner.webp"
               alt="Influencer marketing"
               width={800}
               height={800}

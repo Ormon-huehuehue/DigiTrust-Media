@@ -8,56 +8,56 @@ import { BrandCarousel } from './BrandCarousel';
 const brands = [
   {
     logo: "McDonald's",
-    logoUrl: "/brandLogos/McDonalds.png",
+    logoUrl: "/brandLogos/McDonalds.webp",
     logoStyle: "font-bold italic text-4xl",
     description:
       "Managed nationwide influencer activations and community programs to drive engagement and amplify brand reach."
   },
   {
     logo: "KFC",
-    logoUrl: "/brandLogos/KFC.png",
+    logoUrl: "/brandLogos/KFC.webp",
     logoStyle: "font-light text-4xl tracking-wider",
     description:
       "Executed targeted influencer campaigns to boost online sales and connect with niche audience segments."
   },
   {
     logo: "Bombay Shaving Company",
-    logoUrl: "/brandLogos/bombayShavingCompany.png",
+    logoUrl: "/brandLogos/bombayShavingCompany.webp",
     logoStyle: "font-bold text-3xl",
     description:
       "Launched user-generated content campaigns that drove brand virality and strengthened community loyalty."
   },
   {
     logo: "Swati Cosmetics",
-    logoUrl: "/brandLogos/Swati.png",
+    logoUrl: "/brandLogos/Swati.webp",
     logoStyle: "font-bold text-3xl",
     description:
       "Activated influencer partnerships and on-ground events to build brand presence at national expos."
   },
   {
     logo: "Carmate",
-    logoUrl: "/brandLogos/Carmate.png",
+    logoUrl: "/brandLogos/Carmate.webp",
     logoStyle: "font-bold text-4xl",
     description:
       "Developed strategic collaborations and ran influencer-led campaigns to boost awareness at industry expos."
   },
   {
     logo: "Romeo Lane",
-    logoUrl: "/brandLogos/RomeoLane.png",
+    logoUrl: "/brandLogos/RomeoLane.webp",
     logoStyle: "font-light text-3xl tracking-[0.3em]",
     description:
       "Worked with top nightlife and hospitality venues to amplify brand experiences across premium clubs and cafes."
   },
   {
     logo: "Diablo",
-    logoUrl: "/brandLogos/Diablo.png",
+    logoUrl: "/brandLogos/Diablo.webp",
     logoStyle: "font-light text-3xl tracking-[0.3em]",
     description:
       "Partnered with leading clubs and luxury venues to create memorable influencer-led events and activations."
   },
   {
     logo: "AIR",
-    logoUrl: "/brandLogos/AIR.png",
+    logoUrl: "/brandLogos/AIR.webp",
     logoStyle: "font-light text-3xl tracking-[0.3em]",
     description:
       "Collaborated with high-end cafes and lounges to deliver curated influencer experiences and brand takeovers."
@@ -149,8 +149,8 @@ const BrandShowcase = () => {
                     <Image 
                       src= {brand.logoUrl}
                       alt="Brand Icon"
-                      width = {0}
-                      height={0}
+                      width = {200}
+                      height={200}
                       className="ml-2 w-auto h-[50px]"
                     /> : 
                     <h2 className={`${brand.logoStyle} text-foreground`}>

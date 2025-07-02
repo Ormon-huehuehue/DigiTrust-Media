@@ -16,7 +16,7 @@ export function AppleCardsCarouselDemo() {
 
   return (
     <div className="w-full h-full text-center">
-      <h2 className="max-w-7xl mx-auto text-4xl sm:text-5xl md:text-7xl  font-bold text-neutral-800 dark:text-neutral-200 text-center font-anton">
+      <h2 className="max-w-7xl mx-auto text-4xl sm:text-5xl md:text-7xl  font-bold text-neutral-800 text-center font-anton">
         OUR WORK
       </h2>
       <p className="mt-4 text-lg text-muted-foreground text-center">
@@ -65,7 +65,7 @@ const data = [
   {
     category: "Branding",
     title: "McDonald’s Brand Ambassador Community",
-    src: "/work/mcd.jpg",
+    src: "/work/mcd.webp",
     content: (
       <>
         <p>
@@ -77,7 +77,7 @@ const data = [
   {
     category: "Digital Strategy",
     title: "KFC Digital Funnel & Storytelling",
-    src: "/work/kfc.jpg",
+    src: "/work/kfc.webp",
     content: (
       <>
         <p>
@@ -89,7 +89,7 @@ const data = [
   {
     category: "Activation",
     title: "Carmate Auto Expo Launch",
-    src: "/work/carmate.png",
+    src: "/work/carmate.webp",
     content: (
       <>
         <p>
@@ -101,13 +101,13 @@ const data = [
   {
     category: "UGC Campaign",
     title: "Bombay Shaving Company Creator Push",
-    src: "/work/bombay_shaving_company.png",
+    src: "/work/bombay_shaving_company.webp",
     content: <DummyContent/>
   },
   {
     category: "Influencer Marketing",
     title: "SWATI Cosmetics Expo Activation",
-    src: "/work/lenses.png",
+    src: "/work/lenses.webp",
     content: (
       <>
         <p>
@@ -119,7 +119,7 @@ const data = [
   {
     category: "Nightlife & Hospitality",
     title: "Romeo Lane Life Style Content",
-    src: "/work/bar.png",
+    src: "/work/bar.webp",
     content: (
       <>
         <p>

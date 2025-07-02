@@ -9,11 +9,7 @@ const Founders = () => {
             designation : "Founder",
             img : "/founders/gaurav.png"
         },
-        {
-            name : "Saurav Raichand",
-            designation : "Co-Founder",
-            img : ""
-        },
+        
     ]
 
     return (

@@ -99,8 +99,8 @@ export const InfiniteMovingCards = ({
                       <Image 
                         src= {brand.logoUrl}
                         alt="Brand Icon"
-                        width = {0}
-                        height={0}
+                        width = {200}
+                        height={200}
                         className="ml-2 w-auto h-[50px]"
                       /> : 
                       <h2 className= 'text-foreground'>

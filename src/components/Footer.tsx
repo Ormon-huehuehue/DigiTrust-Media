@@ -2,10 +2,10 @@ import Link from "next/link"
 
 export default function Footer() {
   return (
-    <footer className="bg-zinc-900 border-t border-border text-foreground pt-4">
+    <footer className="bg-zinc-900 border-t border-border text-foreground pt-4 max-w-screen overflow-clip">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <nav className="flex justify-center space-x-8" aria-label="Footer">
-          {["ABOUT", "WORK", "SERVICES", "CONTACT", "PRIVACY", "TERMS"].map((item) => (
+          {["ABOUT","SERVICES", "CONTACT"].map((item) => (
             <Link
               key={item}
               href=""
@@ -17,7 +17,7 @@ export default function Footer() {
             </Link>
           ))}
         </nav>
-        <p className="mt-3 text-center text-xs text-muted-foreground font-haptik">
+        <p className="mt-3 pb-2 text-center text-xs text-muted-foreground font-haptik">
           © 2024 Digitrust Media
         </p>
       </div>

@@ -18,18 +18,10 @@ const links = [
 ]
 
 export default function Header() {
-  const [mounted, setMounted] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
-  const { theme, setTheme } = useTheme()
 
-  // Scroll progress for header behavior
-  const { scrollY } = useScroll()
   
-  // Transform scroll Y to header visibility
-  const headerY = useTransform(scrollY, [0, 100], [0, -100])
-
-  useEffect(() => setMounted(true), [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,10 +61,10 @@ export default function Header() {
             <span className="sr-only">Digitrust Media</span>
             <Image
               className="md:h-12 h-8 w-auto"
-              src="/Logo.png"
+              src="/Logo.webp"
               alt=""
-              width = {0}
-              height = {0}
+              width = {200}
+              height = {200}
             />
           </Link>
         </div>
@@ -88,13 +80,11 @@ export default function Header() {
           ))}
         </div>
         <div className="flex justify-end">
-          {mounted && (
             <button
               className="rounded-md p-2 bg-primary/10 text-muted-foreground font-bold hover:scale-105 md:text-sm text-[8px] px-5 transition-all"
             >
             CONTACT US
             </button>
-          )}
         </div>
   
       </nav>
