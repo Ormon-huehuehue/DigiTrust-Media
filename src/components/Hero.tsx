@@ -65,8 +65,8 @@ export default function Hero() {
           <Image
             src="/Banner.webp"
             alt="digitrust media banner"
-            width={600}
-            height={600}
+            width={700}
+            height={700}
             className="w-[500px] rounded-2xl"
           />
         </motion.div>
@@ -82,8 +82,8 @@ export default function Hero() {
             <Image
               src="/Banner.webp"
               alt="Influencer marketing"
-              width={320}
-              height={350}
+              width={600}
+              height={600}
               className="w-[600px] rounded-2xl"
             />
           </div>

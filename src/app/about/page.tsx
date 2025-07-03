@@ -14,13 +14,10 @@ const Page = () => {
         description : "DigiTrust Media is a Delhi-based influencer marketing agency helping brands grow through authentic creator-led campaigns. We blend culture, content, and strategy to drive impact and measurable digital growth."
     }
 
-    const ourTeamHeaderData = {
-      title : "FOUNDER",
-      description : "Our story began in Delhi with a simple belief: the future of marketing is human. Since then, DigiTrust Media has grown into a dynamic team of strategists, creators, and digital marketers driving campaigns that spark genuine influence and brand love. We're content-first and data-backed, combining creative storytelling with cutting-edge tools—including AI—to craft experiences that resonate. From influencer activations to full-funnel strategies, we deliver impact where culture, community, and conversion meet."
-  }
+
 
   return (
-    <div className="min-h-screen relative overflow-hidden mt-[6rem] lg:mt-3 lg:py-20 py-2">
+    <div className="min-h-screen relative overflow-hidden mt-[6rem] lg:mt-3 lg:pt-20 pt-2">
       {/* Blueish gradient background */}
       <div className="fixed inset-0 -z-50 bg-gradient-to-br from-blueish via-blue-200 to-white" />
       {/* Animated Grid Pattern - fixed and full height */}
@@ -49,7 +46,7 @@ const Page = () => {
       </main>
 
       <Link href="/services"
-      className='flex justify-center items-center'>
+      className='flex justify-center items-center mb-20'>
         <AnimatedButton title='Our Services' />
       </Link>
     </div>

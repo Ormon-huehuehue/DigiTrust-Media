@@ -179,7 +179,7 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Bottom CTA section */}
-        <div className='w-full flex justify-center'>
+        <div className='w-full flex justify-center mt-10'>
           <AnimatedButton title="Start Your Campaign Today" />
         </div>
       </div>

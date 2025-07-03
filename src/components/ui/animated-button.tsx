@@ -13,14 +13,14 @@ interface AnimatedButtonProps {
 const AnimatedButton = ({ title, onClick, className = "", ...props }: AnimatedButtonProps) => {
   return (
     <motion.button 
-      className={`text-center mt-20 ${className}`}
+      className={`text-center ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, delay: 0.8 }}
       onClick={onClick}
       {...props}
     >
-      <div className="relative inline-block group cursor-pointer">
+      <div className="relative inline-block group cursor-pointer min-w-[300px] ">
         <div className="bg-gradient-to-r from-primary to-primary/80 p-px rounded-lg">
           <div className="bg-background px-8 py-4 rounded-lg group-hover:bg-muted transition-colors duration-300">
             <span className="text-foreground font-medium tracking-wide">

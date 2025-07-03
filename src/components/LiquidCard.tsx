@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 
 interface FounderProps{
   name : string, 
@@ -16,12 +17,25 @@ interface LiquidCardProps{
 
 const LiquidCard = ( {founder} : LiquidCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const { ref, inView } = useInView({ triggerOnce: false, threshold: 0.8 });
+
+  // Utility to detect mobile devices (tailwind md breakpoint)
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
+  React.useEffect(() => {
+    if (isMobile && inView) {
+      setIsHovered(true);
+    }else if(isMobile && !inView){
+      setIsHovered(false);
+    }
+  }, [isMobile, inView]);
 
   return (
       <motion.div
+        ref={ref}
         className="relative w-80 h-[500px] bg-white rounded-xl shadow-lg cursor-pointer overflow-hidden"
-        onHoverStart={() => setIsHovered(true)}
-        onHoverEnd={() => setIsHovered(false)}
+        onHoverStart={() => { if (!isMobile) setIsHovered(true); }}
+        onHoverEnd={() => { if (!isMobile) setIsHovered(false); }}
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3 }}
       >
