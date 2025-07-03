@@ -2,8 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { title } from 'process';
-import { string } from 'zod';
+import Image from 'next/image';
 
 interface FounderProps{
   name : string, 
@@ -62,9 +61,11 @@ const LiquidCard = ( {founder} : LiquidCardProps) => {
         </div>
         {/* Founder image at the bottom, attached to the border */}
         {founder.img && (
-          <img 
+          <Image 
             src={founder.img} 
             alt={founder.name} 
+            width = {300}
+            height = {300}
             className="absolute left-0 bottom-0 w-full  object-cover rounded-b-xl z-20 border-t border-blue-100"
             style={{ objectPosition: 'center bottom' }}
           />

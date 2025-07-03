@@ -1,7 +1,4 @@
-'use client'
-
 import React from 'react';
-import { motion } from 'framer-motion';
 import { ServiceCard } from '@/components/ServiceCard';
 import { FeatureCard } from '@/components/FeatureCard';
 import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
@@ -74,6 +71,11 @@ const Page = () => {
     }
   ];
 
+  const bottomText = {
+    heading : "Game-changing partnerships that drive results.",
+    subtext : "We're incredibly lucky to partner with visionary leaders and brands from across the globe."
+  }
+
   const features = [
     {
       title: "Monthly Work Cycles",
@@ -127,11 +129,7 @@ const Page = () => {
           ))}
 
           {/* Features Grid */}
-          <motion.section
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <section
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20"
           >
             {features.map((feature, index) => (
@@ -144,35 +142,23 @@ const Page = () => {
                 />
               </div>
             ))}
-          </motion.section>
+          </section>
 
           {/* Bottom CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+          <div
             className="text-center py-10"
           >
-            <motion.h2 
+            <h2 
               className="text-3xl lg:text-5xl font-bold mb-6 text-blue-900"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
             >
-              Game-changing partnerships that drive results.
-            </motion.h2>
-            <motion.p 
+              {bottomText.heading}
+            </h2>
+            <p 
               className="text-xl text-blue-800 max-w-3xl mx-auto"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              viewport={{ once: true }}
             >
-              We're incredibly lucky to partner with visionary leaders and brands from across the globe.
-            </motion.p>
-          </motion.div>
+              {bottomText.subtext}
+            </p>
+          </div>
         </div>
       </main>
     </div>

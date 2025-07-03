@@ -48,7 +48,9 @@ export default function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
             >
-              <p className="text-muted-foreground mb-4">"{testimonial.quote}"</p>
+              <p className="text-muted-foreground mb-4">
+                &ldquo;{testimonial.quote}&rdquo;
+              </p>
               <div className="flex items-center">
                 <Image
                   src={testimonial.image || "/placeholder.svg"}

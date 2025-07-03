@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import AnimatedButton from './ui/animated-button';
-import GiganticHeader from './GiganticHeader';
+
 
 const AnimatedSection = ({ title, items, delay = 0 } : {title : string, items : string[], delay : number}) => {
   const [hoveredIndex, setHoveredIndex] = useState<null | number>(null);

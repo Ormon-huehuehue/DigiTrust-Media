@@ -262,6 +262,8 @@ export const Card = ({
         <OptimizedImage
           src={card.src}
           alt={card.title}
+          width = {600}
+          height = {600}
           className="absolute inset-0 z-10 object-cover"
         />
       </motion.button>
@@ -278,7 +280,7 @@ export const OptimizedImage = ({
   ...rest
 }: ImageProps) => {
   return (
-    <img
+    <Image
       className={cn("h-full w-full transition duration-300", className)}
       src={src as string}
       width={width}

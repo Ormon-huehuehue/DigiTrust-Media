@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import AnimatedList from "./AnimatedList"
 import { Boxes } from "./ui/background-boxes"
+import Image from "next/image"
+import Link from "next/link"
 
 const heroCaption = "Our team of experts use their extensive knowledge of the digital space to discover the right influencers for your business and help you create an engaging and effective campaign."
 
@@ -10,9 +11,9 @@ export default function Hero() {
   return (
     <div className="relative isolate overflow-hidden bg-section-1">
       <Boxes/>
-      <div className="absolute inset-0 w-full h-full bg-slate-200 z-1 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+      <div className="absolute inset-0 w-full h-full bg-slate-200 z-1 [mask-image:radial-gradient(transparent,white)] " />
   
-      <div className="relative z-10 mx-auto max-w-7xl px-6 mt-[6rem] lg:mt-0 lg:py-20 lg:px-8 pointer-events-none">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 mt-[6rem] lg:mt-0 lg:py-20 lg:px-8 ">
         <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg lg:flex-shrink-0">
           <motion.h1
             className="lg:mt-10 mt-0 font-bold tracking-tight text-foreground text-5xl sm:text-6xl"
@@ -37,18 +38,20 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <a
-              href=""
-              className="apple-button"
-            >
-              Explore Our Work
-            </a>
-            <a
-              href=""
-              className="text-sm font-semibold leading-6 text-foreground"
-            >
-              Learn more <span aria-hidden="true">→</span>
-            </a>
+            <Link href=''>
+              <span
+                className="apple-button"
+                >
+                Explore Our Work
+              </span>
+            </Link>
+            <Link href=''>
+              <span
+                className="text-sm font-semibold leading-6 text-foreground"
+                >
+                Learn more <span aria-hidden="true">→</span>
+              </span>
+            </Link>
           </motion.div>
         </div>
         
@@ -59,7 +62,7 @@ export default function Hero() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <img
+          <Image
             src="/Banner.webp"
             alt="digitrust media banner"
             width={600}
@@ -76,11 +79,11 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <div className="flex justify-center">
-            <img
+            <Image
               src="/Banner.webp"
               alt="Influencer marketing"
-              width={800}
-              height={800}
+              width={320}
+              height={350}
               className="w-[600px] rounded-2xl"
             />
           </div>

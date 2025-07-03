@@ -1,7 +1,7 @@
 "use client"
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useMotionValue, animate } from "framer-motion"
+import React, { useState } from 'react';
+import { motion } from "framer-motion"
 import Image from 'next/image';
 import { BrandCarousel } from './BrandCarousel';
 
@@ -69,8 +69,6 @@ const brands = [
 const BrandShowcase = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -114,6 +112,8 @@ const BrandShowcase = () => {
     }
   };
 
+  const heading = "Brands we've worked with";
+
   return (
     <div className="h-auto bg-[#e7ebf1]/70 py-8 px-3 border-2 border-gray-300">
       <motion.div 
@@ -123,7 +123,7 @@ const BrandShowcase = () => {
         animate="visible"
        >
         <h2 className="text-[2.5em] tracking-[-1.5px] font-bold text-center md:text-start lg:mx-10 mx-0 mb-6 mt-7 text-foreground font-haptik">
-          Brands we've worked with
+          {heading}
         </h2>
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-1 !text-foreground">
           {brands.map((brand, index) => (

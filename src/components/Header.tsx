@@ -3,8 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { useTheme } from "next-themes"
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 
 const links = [
   {
@@ -81,7 +80,7 @@ export default function Header() {
         </div>
         <div className="flex justify-end">
             <button
-              className="rounded-md p-2 bg-primary/10 text-muted-foreground font-bold hover:scale-105 md:text-sm text-[8px] px-5 transition-all"
+              className="rounded-md p-2 bg-primary/10 text-muted-foreground font-bold hover:scale-105 md:text-sm text-[8px] px-5 transition-all duration-500"
             >
             CONTACT US
             </button>

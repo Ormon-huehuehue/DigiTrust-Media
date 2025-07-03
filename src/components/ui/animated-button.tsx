@@ -8,7 +8,6 @@ interface AnimatedButtonProps {
   className?: string;
   disabled?: boolean;
   type?: "button" | "submit" | "reset";
-  [key: string]: any; // Allow other HTML button props
 }
 
 const AnimatedButton = ({ title, onClick, className = "", ...props }: AnimatedButtonProps) => {

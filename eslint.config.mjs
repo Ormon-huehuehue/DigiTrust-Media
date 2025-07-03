@@ -1,6 +1,7 @@
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
+import eslintPluginUnusedImports from "eslint-plugin-unused-imports";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -10,13 +11,27 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  // ✅ Ignore files globally
+  {
+    ignores: [
+      "./src/app/hooks/use-toast.ts",
+      "./src/components/magicui/animated-grid-pattern.tsx",
+      "./src/components/ui/apple-cards-carousel.tsx",
+      "./src/hooks/use-outside-click.tsx",
+      "./src/components/ui/infinite-moving-cards.tsx"
+    ],
+  },
+
+  // ✅ Extend from Next.js config
   ...compat.extends("next/core-web-vitals", "next/typescript"),
 
+  // ✅ Plugin config
   {
+    plugins: {
+      "unused-imports": eslintPluginUnusedImports,
+    },
     rules: {
-      // Remove unused imports entirely
       "unused-imports/no-unused-imports": "warn",
-      // Remove unused variables but keep those starting with "_"
       "unused-imports/no-unused-vars": [
         "warn",
         {
@@ -26,9 +41,6 @@ const eslintConfig = [
           argsIgnorePattern: "^_",
         },
       ],
-    },
-    plugins: {
-      "unused-imports": require("eslint-plugin-unused-imports"),
     },
   },
 ];

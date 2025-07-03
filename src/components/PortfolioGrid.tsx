@@ -1,15 +1,16 @@
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import Image from "next/image";
 
 export default function PortfolioGrid() {
   return (
     <section className="py-20 bg-gradient-to-b from-blueish/50 via-muted/20 to-background ">
-        <AppleCardsCarouselDemo/>
+        <AppleCardsCarousel/>
     </section>
   )
 }
 
 
-export function AppleCardsCarouselDemo() {
+export function AppleCardsCarousel() {
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
@@ -45,11 +46,11 @@ const DummyContent = () => {
               Langotiya jeetu ka mara hua yaar is ready to capture every
               thought.
             </p>
-            <img
+            <Image
               src="https://assets.aceternity.com/macbook.png"
               alt="Macbook mockup from Aceternity UI"
-              height="500"
-              width="500"
+              height={300}
+              width={300}
               className="md:w-1/2 md:h-1/2 h-full w-full mx-auto object-contain"
             />
           </div>

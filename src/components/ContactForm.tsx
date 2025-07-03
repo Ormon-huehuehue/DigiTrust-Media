@@ -18,6 +18,12 @@ const formSchema = z.object({
   message: z.string().min(10, { message: "Message must be at least 10 characters." }),
 })
 
+
+const headContent = {
+  heading : "Fuel your brand's growth with Digitrust Media", 
+  subtext : "We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible."
+}
+
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -52,10 +58,10 @@ export default function ContactForm() {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-4 font-haptik">Fuel your brand's growth with Digitrust Media
+          <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-4 font-haptik">{headContent.heading}
           </h2>
           <p className="text-lg text-muted-foreground">
-            We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.
+            {headContent.subtext}
           </p>
         </motion.div>
         <motion.div

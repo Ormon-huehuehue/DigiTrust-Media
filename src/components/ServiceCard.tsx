@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react';
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface ServiceCardProps{
     title : string,
@@ -19,21 +19,19 @@ interface CategoryProps{
 }
 
 export const ServiceCard = ({ title, subtitle, description, services, delay = 0, className = "" } : ServiceCardProps) => {
-  const ref = React.useRef(null);
-  const isInView = useInView(ref, { once: true });
-
   return (
     <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 60 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 60 }}
-      transition={{ duration: 0.8, delay }}
-      className={`bg-white/90 border border-blue-50 rounded-3xl p-8 lg:p-12 shadow-md hover:shadow-lg transition-all duration-500 ${className}`}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.6 }}
+      className={`bg-white/90 border border-blue-50 rounded-3xl p-8 lg:p-12 shadow-md hover:shadow-lg ${className}`}
     >
       <motion.h2 
         className="text-4xl lg:text-6xl font-bold text-foreground mb-4"
         initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, delay: delay + 0.2 }}
       >
         {title}
@@ -42,7 +40,8 @@ export const ServiceCard = ({ title, subtitle, description, services, delay = 0,
       <motion.p 
         className="text-muted-foreground text-xl lg:text-2xl font-medium mb-6"
         initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, delay: delay + 0.3 }}
       >
         {subtitle}
@@ -51,7 +50,8 @@ export const ServiceCard = ({ title, subtitle, description, services, delay = 0,
       <motion.p 
         className="text-gray-500 text-lg leading-relaxed mb-10"
         initial={{ opacity: 0 }}
-        animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, delay: delay + 0.4 }}
       >
         {description}
@@ -62,7 +62,8 @@ export const ServiceCard = ({ title, subtitle, description, services, delay = 0,
           <motion.div
             key={category.title}
             initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.5, delay: delay + 0.5 + (index * 0.1) }}
             className="space-y-4"
           >
@@ -74,7 +75,8 @@ export const ServiceCard = ({ title, subtitle, description, services, delay = 0,
                 <motion.li
                   key={itemIndex}
                   initial={{ opacity: 0 }}
-                  animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.3, delay: delay + 0.6 + (index * 0.1) + (itemIndex * 0.05) }}
                   className="text-gray-500 hover:text-gray-700 transition-colors duration-200 font-medium cursor-pointer"
                 >
