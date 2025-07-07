@@ -8,6 +8,7 @@ import WhyChooseUs from "@/components/WhyChooseUs"
 import CampaignProcess from "@/components/CampaignProcess"
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern"
 import { cn } from "@/lib/utils"
+// import BookMeeting from "@/components/BookMeeting"
 
 export default function Home() {
   return (
@@ -48,8 +49,8 @@ export default function Home() {
       <Marquee />
 
       {/* contact form section */}
-      {/* <section className='flex bg-[#e7ebf1]/30 justify-center py-20'>
-        <ContactForm />
+      {/* <section className='flex flex-col bg-[#e7ebf1]/30 justify-center'>
+        <BookMeeting/>
       </section> */}
   
     </>

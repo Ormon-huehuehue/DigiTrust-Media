@@ -3,7 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-const GiganticHeader = ({title, description, headerCSS="tracking-tight bg-gradient-to-r from-blue-900 via-blue-400 to-blue-700 bg-clip-text text-transparent font-anton"} : {title : string, description? : string, headerCSS? : string}) => {
+const GiganticHeader = ({title, description, headerCSS="tracking-tight bg-gradient-to-r from-blue-900 via-blue-400 to-blue-700 bg-clip-text text-transparent font-anton", className} : {title : string, description? : string, headerCSS? : string, className? : string}) => {
 
   return (
     <motion.header 
@@ -28,7 +28,7 @@ const GiganticHeader = ({title, description, headerCSS="tracking-tight bg-gradie
         }}
       >
         <motion.span
-        className={`inline-block ${headerCSS}`}
+        className={`inline-block ${headerCSS} ${className}`}
         animate={{ 
           backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
         }}

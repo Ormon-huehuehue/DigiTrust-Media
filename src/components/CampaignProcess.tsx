@@ -86,7 +86,8 @@ export default function CampaignProcess({giganticHeader = false} : {giganticHead
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {giganticHeader ? <GiganticHeader title="HOW WE WORK" headerCSS="bg-gradient-to-r from-gray-900 via-gray-400 to-gray-700 bg-clip-text text-transparent"/> :   <motion.h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold   font-anton tracking-wide"
+          {giganticHeader ? <GiganticHeader title="HOW WE WORK" headerCSS="bg-gradient-to-r from-gray-900 via-gray-400 to-gray-700 bg-clip-text text-transparent"/> :   
+          <motion.h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold   font-anton tracking-wide"
             animate={{ 
               backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
             }}

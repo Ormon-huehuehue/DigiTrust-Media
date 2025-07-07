@@ -5,7 +5,8 @@ import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/Header"
 import Footer from "@/components/Footer"
 import type React from "react"
-import ContactForm from "@/components/ContactForm"
+// import ContactForm from "@/components/ContactForm"
+import BookMeeting from "@/components/BookMeeting"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -30,8 +31,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <main>{children}
-          <section id="contact-form" className='flex justify-center py-20'>
-            <ContactForm />
+          <section id="contact-form" 
+            className='flex bg-gradient-to-br from-background via-white/70 to-background rounded-3xl shadow-lg mx-[10rem] my-20 justify-center py-10'>
+            <BookMeeting/>
           </section>
           </main>
              {/* contact form section */}
