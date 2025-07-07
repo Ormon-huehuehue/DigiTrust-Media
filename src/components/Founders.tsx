@@ -15,7 +15,7 @@ const foundersData = [
 
 const ourTeamHeaderData = {
     title : "FOUNDER",
-    description : "Our story began in Delhi with a simple belief: the future of marketing is human. Since then, DigiTrust Media has grown into a dynamic team of strategists, creators, and digital marketers driving campaigns that spark genuine influence and brand love. We're content-first and data-backed, combining creative storytelling with cutting-edge tools—including AI—to craft experiences that resonate. From influencer activations to full-funnel strategies, we deliver impact where culture, community, and conversion meet."
+    description : "DigiTrust Media was born in Delhi with one core belief: marketing should feel human. What started as a simple idea has grown into a powerhouse of strategists, creators, and digital marketers united by one goal—driving meaningful impact. We blend creative storytelling with data-driven precision and cutting-edge tools, including AI, to build campaigns that resonate and convert. From influencer activations to full-funnel growth strategies, we create brand experiences where culture, community, and performance meet."
 }
 
 const Founders = () => {
