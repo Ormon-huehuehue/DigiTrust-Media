@@ -4,6 +4,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Booker from './CalBooker'
 
+const subheading = "Fuel your brand's growth with Digitrust Media"
+
 const BookMeeting = () => {
   return (
     <motion.div
@@ -29,7 +31,7 @@ const BookMeeting = () => {
             WITH US
         </motion.h2>
         <p className="mt-4 mb-10 text-lg text-muted-foreground">
-            Fuel your brand's growth with Digitrust Media
+            {subheading}
         </p>
         <div className='w-full flex justify-center items-center'>
             <Booker/>
