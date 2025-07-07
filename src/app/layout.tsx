@@ -32,7 +32,7 @@ export default function RootLayout({
           <Header />
           <main>{children}
           <section id="contact-form" 
-            className='flex bg-gradient-to-br from-background via-white/70 to-background rounded-3xl shadow-lg mx-[10rem] my-20 justify-center py-10'>
+            className='flex bg-gradient-to-br from-background via-white/70 to-background rounded-3xl shadow-lg mx-2 md:mx-[4rem] lg:mx-[10rem] my-20 justify-center py-10'>
             <BookMeeting/>
           </section>
           </main>
