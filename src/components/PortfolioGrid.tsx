@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function PortfolioGrid() {
   return (
-    <section className="py-20 bg-gradient-to-b from-blueish/50 via-muted/20 to-background ">
+    <section id="work" className="py-20 bg-gradient-to-b from-blueish/50 via-muted/20 to-background ">
         <AppleCardsCarousel/>
     </section>
   )

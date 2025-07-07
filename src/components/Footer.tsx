@@ -1,19 +1,32 @@
 import Link from "next/link"
 
+const footerItems=[
+  {
+    title : "ABOUT",
+    link : "/about"
+  },
+  {
+    title : "SERVICES",
+    link : "/services"
+  },
+  {
+    title : "CONTACT",
+    link : "/"
+  }
+]
+
 export default function Footer() {
   return (
     <footer className="bg-zinc-900 border-t border-border text-foreground pt-4 max-w-screen overflow-clip">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <nav className="flex justify-center space-x-8" aria-label="Footer">
-          {["ABOUT","SERVICES", "CONTACT"].map((item) => (
+          {footerItems.map((item, index) => (
             <Link
-              key={item}
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
+              key={index}
+              href={item.link}
               className="text-xs text-muted-foreground hover:text-foreground transition-colors"
             >
-              {item}
+              {item.title}
             </Link>
           ))}
         </nav>

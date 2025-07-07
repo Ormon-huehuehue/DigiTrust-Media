@@ -46,7 +46,7 @@ const Page = () => {
       </main>
 
       <Link href="/services"
-      className='flex justify-center items-center mb-20'>
+      className='flex justify-center items-center'>
         <AnimatedButton title='Our Services' />
       </Link>
     </div>

@@ -1,6 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
+import Link from 'next/link';
 import AnimatedButton from './ui/animated-button';
 
 
@@ -179,9 +180,11 @@ const WhyChooseUs = () => {
         </div>
 
         {/* Bottom CTA section */}
-        <div className='w-full flex justify-center mt-10'>
+        <Link
+          href="#contact-form" 
+          className='w-full flex justify-center mt-10'>
           <AnimatedButton title="Start Your Campaign Today" />
-        </div>
+        </Link>
       </div>
     </div>
   );

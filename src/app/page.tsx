@@ -48,9 +48,9 @@ export default function Home() {
       <Marquee />
 
       {/* contact form section */}
-      <section className='flex bg-[#e7ebf1]/30 justify-center py-20'>
+      {/* <section className='flex bg-[#e7ebf1]/30 justify-center py-20'>
         <ContactForm />
-      </section>
+      </section> */}
   
     </>
   )

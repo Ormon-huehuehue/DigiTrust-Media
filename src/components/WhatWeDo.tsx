@@ -1,6 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Link from "next/link"
 
 const caption = "We're a marketing agency that helps businesses grow with our expertise in influencer marketing & social media management. We are not limited to any brand/business category. We are here to help everyone grow."
 
@@ -24,10 +25,8 @@ export default function WhatWeDo() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <a
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="#contact-form"
               className="apple-button inline-flex items-center"
             >
               Get in Touch
@@ -40,7 +39,7 @@ export default function WhatWeDo() {
               >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>
