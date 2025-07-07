@@ -79,7 +79,7 @@ export default function Header() {
           ))}
         </div>
         <Link
-          href='#contact-form' 
+          href="#contact-form" 
           className="flex justify-end">
             <button
               className="rounded-md p-2 bg-primary/10 text-muted-foreground font-bold hover:scale-105 md:text-sm text-[8px] px-5 transition-all duration-500"

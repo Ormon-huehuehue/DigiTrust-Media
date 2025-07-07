@@ -30,7 +30,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <main>{children}
-          <section id='contact-form' className='flex justify-center py-20'>
+          <section id="contact-form" className='flex justify-center py-20'>
             <ContactForm />
           </section>
           </main>
