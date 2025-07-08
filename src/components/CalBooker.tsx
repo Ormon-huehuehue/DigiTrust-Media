@@ -10,9 +10,10 @@ export default function Booker() {
         (async function () {
             const cal = await getCalApi({"namespace":"30min"});
             cal("ui", {
+                "theme":"light",
                 "cssVarsPerTheme":{
                     "light":{"cal-brand":"#292929"},
-                    "dark":{"cal-brand":"#292929"}
+                    "dark":{"cal-brand":"#e7ebf1"}
                 },
                 "hideEventTypeDetails":true,
                 "layout":"month_view"
