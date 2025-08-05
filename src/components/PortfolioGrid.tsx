@@ -21,7 +21,7 @@ export function AppleCardsCarousel() {
         OUR WORK
       </h2>
       <p className="mt-4 text-lg text-muted-foreground text-center">
-            A showcase of our minimalist designs and creative solutions.
+            A showcase of projects we've helped our clients with.
       </p>
       <Carousel items={cards} />
     </div>
@@ -66,7 +66,7 @@ const data = [
   {
     category: "Branding",
     title: "McDonald’s Brand Ambassador Community",
-    src: "/work/mcd.webp",
+    src: "/work/donalds.webp",
     content: (
       <>
         <p>
@@ -78,7 +78,7 @@ const data = [
   {
     category: "Digital Strategy",
     title: "KFC Digital Funnel & Storytelling",
-    src: "/work/kfc.webp",
+    src: "/work/KFC.png",
     content: (
       <>
         <p>
@@ -102,13 +102,13 @@ const data = [
   {
     category: "UGC Campaign",
     title: "Bombay Shaving Company Creator Push",
-    src: "/work/bombay_shaving_company.webp",
+    src: "/work/bombay_gemini.webp",
     content: <DummyContent/>
   },
   {
     category: "Influencer Marketing",
-    title: "SWATI Cosmetics Expo Activation",
-    src: "/work/lenses.webp",
+    title: "Swati Cosmetics",
+    src: "/work/swati.webp",
     content: (
       <>
         <p>
@@ -120,7 +120,7 @@ const data = [
   {
     category: "Nightlife & Hospitality",
     title: "Romeo Lane Life Style Content",
-    src: "/work/bar.webp",
+    src: "/work/romeo_lane1.webp",
     content: (
       <>
         <p>

@@ -242,30 +242,31 @@ export const Card = ({
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         // onClick={handleOpen}
-        className="relative z-10 flex h-[70vh] w-[80vw] flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 sm:h-[40rem] sm:w-96 dark:bg-neutral-900"
+        className="relative z-10 flex h-[70vh] w-[80vw] flex-col items-start justify-start overflow-hidden rounded-3xl border-2 border-gray-300 bg-white bg-opacity-30 sm:h-[40rem] sm:w-96 dark:bg-neutral-900"
       >
-        <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
-        <div className="relative z-40 p-8">
+        <div className="relative w-full h-3/4 overflow-hidden rounded-t-3xl">
+          <OptimizedImage
+            src={card.src}
+            alt={card.title}
+            width={700}
+            height={700}
+            className="object-cover"
+          />
+        </div>
+        <div className="p-8 flex flex-col items-start flex-grow">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
-            className="text-left font-sans text-sm font-medium text-white md:text-base"
+            className="text-left font-sans text-sm font-medium text-black md:text-base dark:text-white"
           >
             {card.category}
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
+            className="mt-2 max-w-xs text-left font-sans text-lg font-semibold [text-wrap:balance] text-neutral-700 md:text-xl dark:text-white"
           >
             {card.title}
           </motion.p>
         </div>
-        <OptimizedImage
-          src={card.src}
-          alt={card.title}
-          width = {700}
-          height = {700}
-          className="absolute inset-0 z-10 object-cover"
-        />
       </motion.button>
     </>
   );

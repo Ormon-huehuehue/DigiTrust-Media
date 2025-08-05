@@ -63,11 +63,11 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <Image
-            src="/Banner.webp"
+            src="/Banner.png"
             alt="digitrust media banner"
             width={700}
             height={700}
-            className="w-[500px] rounded-2xl"
+            className="w-[450px] rounded-2xl"
           />
         </motion.div>
         
@@ -80,11 +80,11 @@ export default function Hero() {
         >
           <div className="flex justify-center">
             <Image
-              src="/Banner.webp"
+              src="/Banner.png"
               alt="Influencer marketing"
               width={600}
               height={600}
-              className="w-[600px] rounded-2xl"
+              className="w-[500px] rounded-2xl"
             />
           </div>
         </motion.div>
