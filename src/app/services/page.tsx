@@ -149,12 +149,12 @@ const Page = () => {
             className="text-center py-10"
           >
             <h2 
-              className="text-3xl lg:text-5xl font-bold mb-6 text-blue-900"
+              className="text-3xl lg:text-5xl font-bold mb-6 text-foreground"
             >
               {bottomText.heading}
             </h2>
             <p 
-              className="text-xl text-blue-800 max-w-3xl mx-auto"
+              className="text-xl text-foreground max-w-3xl mx-auto"
             >
               {bottomText.subtext}
             </p>
