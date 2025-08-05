@@ -15,13 +15,15 @@ export function AppleCardsCarousel() {
     <Card key={card.src} card={card} index={index} />
   ));
 
+  const subheading = "A showcase of projects we've helped our clients with."
+
   return (
     <div className="w-full h-full text-center">
       <h2 className="max-w-7xl mx-auto text-4xl sm:text-5xl md:text-7xl  font-bold text-neutral-800 text-center font-anton">
         OUR WORK
       </h2>
       <p className="mt-4 text-lg text-muted-foreground text-center">
-            A showcase of projects we've helped our clients with.
+            {subheading}
       </p>
       <Carousel items={cards} />
     </div>
