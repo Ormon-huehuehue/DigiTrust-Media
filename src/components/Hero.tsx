@@ -68,6 +68,8 @@ export default function Hero() {
             width={700}
             height={700}
             className="w-[450px] rounded-2xl"
+            loading="eager"
+            fetchPriority="high"
           />
         </motion.div>
         
@@ -85,6 +87,8 @@ export default function Hero() {
               width={600}
               height={600}
               className="w-[500px] rounded-2xl"
+              loading="eager"
+              fetchPriority="high"
             />
           </div>
         </motion.div>
