@@ -80,7 +80,7 @@ const data = [
   {
     category: "Digital Strategy",
     title: "KFC Digital Funnel & Storytelling",
-    src: "/work/KFC.png",
+    src: "/work/KFC.webp",
     content: (
       <>
         <p>
