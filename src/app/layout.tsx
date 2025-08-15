@@ -7,6 +7,7 @@ import Footer from "@/components/Footer"
 import type React from "react"
 // import ContactForm from "@/components/ContactForm"
 import BookMeeting from "@/components/BookMeeting"
+import { Analytics } from "@vercel/analytics/next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -31,6 +32,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light">
           <Header />
           <main>{children}
+          <Analytics/>
           <section id="contact-form" 
             className='flex bg-gradient-to-br from-background via-white/70 to-background rounded-3xl shadow-lg mx-2 md:mx-[4rem] lg:mx-[10rem] my-20 justify-center py-10'>
             <BookMeeting/>
