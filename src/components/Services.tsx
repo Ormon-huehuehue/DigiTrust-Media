@@ -34,7 +34,7 @@ export default function Services() {
           className="text-5xl font-bold mb-16 text-center text-foreground font-haptik"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
         >
           Our Services
         </motion.h2>
@@ -45,7 +45,7 @@ export default function Services() {
               className="bg-card p-6 rounded-lg border border-border"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.38, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
             >
               {service.icon}
               <h3 className="text-xl font-bold mb-2 text-foreground">{service.title}</h3>

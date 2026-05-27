@@ -10,9 +10,6 @@ const BookMeeting = () => {
   return (
     <motion.div
     className="text-center mb-16"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
     >
         <motion.h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold font-anton tracking-wide text-center pt-10"
             animate={{ 

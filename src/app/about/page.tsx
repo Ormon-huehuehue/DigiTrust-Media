@@ -6,11 +6,26 @@ import Founders from '@/components/Founders';
 import CampaignProcess from '@/components/CampaignProcess';
 import AnimatedButton from '@/components/ui/animated-button';
 import Link from 'next/link';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+    title: "About DigiTrust Media",
+    description:
+        "Learn about DigiTrust Media, a Delhi-based creator marketing agency helping brands scale through authentic influencer campaigns, culture-led content, and digital strategy.",
+    alternates: {
+        canonical: "/about",
+    },
+    openGraph: {
+        title: "About DigiTrust Media | Creator Marketing Agency",
+        description:
+            "A Delhi-based influencer marketing agency blending culture, content, and strategy for measurable brand growth.",
+        url: "/about",
+    },
+}
 
 const Page = () => {
     const headerData = {
-        title : "ABOUT US",
+        title : "ABOUT DIGITRUST MEDIA",
         description : "DigiTrust Media is a Delhi-based influencer marketing agency helping brands grow through authentic creator-led campaigns. We blend culture, content, and strategy to drive impact and measurable digital growth."
     }
 
@@ -31,8 +46,12 @@ const Page = () => {
         )}
       />
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 my-16 md:my-20">
-        <GiganticHeader title={headerData.title} description={headerData.description}/>
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 my-10 md:my-12">
+        <GiganticHeader
+          title={headerData.title}
+          description={headerData.description}
+          headerCSS="tracking-tight bg-gradient-to-r from-zinc-950 via-zinc-600 to-zinc-900 bg-clip-text text-transparent font-anton"
+        />
       </div>
 
       {/* Founders Section */}

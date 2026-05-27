@@ -45,10 +45,10 @@ export default function ProductShowcase() {
             <motion.div
               key={currentProduct}
               className="flex flex-col md:flex-row items-center justify-between"
-              initial={{ opacity: 0, x: 100 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -100 }}
-              transition={{ duration: 0.5 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              transition={{ duration: 0.38, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="md:w-1/2 mb-8 md:mb-0">
                 <h3 className="text-3xl font-bold mb-4">{products[currentProduct].name}</h3>

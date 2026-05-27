@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function PortfolioGrid() {
   return (
-    <section id="work" className="py-20 bg-gradient-to-b from-blueish/50 via-muted/20 to-background ">
+    <section id="work" data-reveal className="py-20 bg-gradient-to-b from-blueish/50 via-muted/20 to-background ">
         <AppleCardsCarousel/>
     </section>
   )
@@ -15,12 +15,12 @@ export function AppleCardsCarousel() {
     <Card key={card.src} card={card} index={index} />
   ));
 
-  const subheading = "A showcase of projects we've helped our clients with."
+  const subheading = "Influencer marketing campaigns, creator activations, and brand partnerships we've helped clients launch."
 
   return (
     <div className="w-full h-full text-center">
       <h2 className="max-w-7xl mx-auto text-4xl sm:text-5xl md:text-7xl  font-bold text-neutral-800 text-center font-anton">
-        OUR WORK
+        INFLUENCER CAMPAIGN WORK
       </h2>
       <p className="mt-4 text-lg text-muted-foreground text-center">
             {subheading}
@@ -132,5 +132,3 @@ const data = [
     ),
   },
 ];
-
-

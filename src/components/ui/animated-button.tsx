@@ -16,7 +16,7 @@ const AnimatedButton = ({ title, onClick, className = "", ...props }: AnimatedBu
       className={`text-center ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.8 }}
+      transition={{ duration: 0.35, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
       onClick={onClick}
       {...props}
     >

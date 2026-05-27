@@ -7,53 +7,31 @@ const GiganticHeader = ({title, description, headerCSS="tracking-tight bg-gradie
 
   return (
     <motion.header 
-    initial={{ opacity: 0, y: -50 }}
+    initial={{ opacity: 0, y: 16 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.8 }}
+    transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
     className="relative z-10"
   >
     <div className="max-w-7xl mx-auto text-center sm:text-start">
-      <motion.h1 
-        className="text-[5rem] lg:text-[8rem] xl:text-[12rem] mb-8 leading-none font-anton"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ 
-          duration: 1.2, 
-          delay: 0.2,
-          ease: [0.25, 0.46, 0.45, 0.94]
-        }}
-        whileHover={{ 
-          y: -10,
-          transition: { duration: 0.3, ease: "easeOut" } 
-        }}
+      <h1 
+        className="text-[3.75rem] sm:text-[5.5rem] lg:text-[7rem] xl:text-[8.5rem] mb-6 leading-[0.92] font-anton"
       >
-        <motion.span
+        <span
         className={`inline-block ${headerCSS} ${className}`}
-        animate={{ 
-          backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"]
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "linear"
-        }}
         style={{
-          backgroundSize: "200% 200%"
+          backgroundSize: "140% 140%"
         }}
       >
         {title}
-      </motion.span>
+      </span>
         
-      </motion.h1>
+      </h1>
       {description && 
-      <motion.p 
-        className="text-lg lg:text-xl text-gray-500 font-haptik max-w-4xl leading-relaxed"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.4 }}
+      <p 
+        className="text-base lg:text-lg text-gray-500 font-haptik max-w-3xl leading-relaxed"
       >
         {description}
-      </motion.p>}
+      </p>}
     </div>
   </motion.header>
   )

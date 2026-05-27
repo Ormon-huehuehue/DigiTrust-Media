@@ -8,7 +8,23 @@ import WhyChooseUs from "@/components/WhyChooseUs"
 import CampaignProcess from "@/components/CampaignProcess"
 import { AnimatedGridPattern } from "@/components/magicui/animated-grid-pattern"
 import { cn } from "@/lib/utils"
+import type { Metadata } from "next"
 // import BookMeeting from "@/components/BookMeeting"
+
+export const metadata: Metadata = {
+  title: "Influencer Marketing Agency in Delhi",
+  description:
+    "DigiTrust Media helps brands grow with influencer marketing, creator campaigns, celebrity partnerships, brand activations, and digital strategy across India.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "DigiTrust Media | Influencer Marketing Agency in Delhi",
+    description:
+      "Creator-led campaigns, celebrity partnerships, and brand activations for growth-focused brands.",
+    url: "/",
+  },
+}
 
 export default function Home() {
   return (
@@ -29,6 +45,8 @@ export default function Home() {
         )}
       />
 
+        {/* brand showcase */}
+      <BrandShowcase/>
 
       <WhatWeDo />
      
@@ -38,12 +56,10 @@ export default function Home() {
       <PortfolioGrid />
 
       {/* Process */}
-      <section className="bg-white/80 border border-blue-100 py-16 px-4 sm:px-12">
+      <section data-reveal className="bg-white/80 border border-blue-100 py-16 px-4 sm:px-12">
           <CampaignProcess giganticHeader={false} />
       </section>
   
-        {/* brand showcase */}
-      <BrandShowcase/>
 
       {/* <Marquee /> */}
       <Marquee />

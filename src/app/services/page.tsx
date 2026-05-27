@@ -4,12 +4,27 @@ import { FeatureCard } from '@/components/FeatureCard';
 import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern';
 import { cn } from '@/lib/utils';
 import GiganticHeader from '@/components/GiganticHeader';
+import type { Metadata } from 'next';
 
+export const metadata: Metadata = {
+  title: "Influencer Marketing Services",
+  description:
+    "Explore DigiTrust Media services for creator activation, influencer sourcing, celebrity partnerships, campaign management, events, and brand experiences.",
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Influencer Marketing Services | DigiTrust Media",
+    description:
+      "Creator campaigns, celebrity partnerships, influencer sourcing, and brand experiences for modern brands.",
+    url: "/services",
+  },
+}
 
 const Page = () => {
 
   const headerData = {
-    title : "SERVICES",
+    title : "INFLUENCER MARKETING SERVICES",
     description : "We are your all-in-one destination for everything related to creator marketing, celebrity/influencer partnerships, and memorable brand experiences."
   }
 
@@ -110,8 +125,12 @@ const Page = () => {
         )}
       />
       {/* Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 my-16 md:my-20">
-        <GiganticHeader title={headerData.title} description={headerData.description} />
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 my-10 md:my-12">
+        <GiganticHeader
+          title={headerData.title}
+          description={headerData.description}
+          headerCSS="tracking-tight bg-gradient-to-r from-zinc-950 via-zinc-600 to-zinc-900 bg-clip-text text-transparent font-anton"
+        />
       </div>
 
       {/* Main Content */}
@@ -133,14 +152,13 @@ const Page = () => {
             className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20"
           >
             {features.map((feature, index) => (
-              <div key={feature.title} className="bg-white/90 border border-blue-50 shadow rounded-2xl">
-                <FeatureCard
-                  title={feature.title}
-                  description={feature.description}
-                  delay={index * 0.1}
-                  className=""
-                />
-              </div>
+              <FeatureCard
+                key={feature.title}
+                title={feature.title}
+                description={feature.description}
+                delay={index * 0.04}
+                className="bg-white/90 border border-blue-50 shadow"
+              />
             ))}
           </section>
 

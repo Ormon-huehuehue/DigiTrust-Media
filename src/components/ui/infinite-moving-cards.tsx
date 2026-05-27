@@ -103,7 +103,7 @@ export const InfiniteMovingCards = ({
                   { brand.logoUrl.length > 0 ? 
                       <Image 
                         src= {brand.logoUrl}
-                        alt="Brand Icon"
+                        alt={`${brand.logo} influencer marketing client logo`}
                         width = {200}
                         height={200}
                         className="ml-2 w-auto h-[50px]"

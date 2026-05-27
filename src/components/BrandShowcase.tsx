@@ -90,7 +90,7 @@ const BrandShowcase = () => {
       y: 0,
       scale: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.38,
         ease: "easeOut"
       }
     }
@@ -115,7 +115,7 @@ const BrandShowcase = () => {
   const heading = "Brands we've worked with";
 
   return (
-    <div className="h-auto bg-[#e7ebf1]/70 py-8 px-3 border-2 border-gray-300">
+    <section data-reveal className="h-auto bg-[#e7ebf1]/70 py-8 px-3 border-2 border-gray-300">
       <motion.div 
         className="max-w-2xl mx-auto lg:max-w-7xl"
         variants={containerVariants}
@@ -148,7 +148,7 @@ const BrandShowcase = () => {
                   { brand.logoUrl.length > 0 ? 
                     <Image 
                       src= {brand.logoUrl}
-                      alt="Brand Icon"
+                      alt={`${brand.logo} influencer marketing client logo`}
                       width = {200}
                       height={200}
                       className="ml-2 w-auto h-[50px]"
@@ -172,7 +172,7 @@ const BrandShowcase = () => {
           <BrandCarousel data={brands} />
         </div>
       </motion.div>
-    </div>
+    </section>
   );
 };
 
@@ -255,4 +255,3 @@ export default BrandShowcase;
 //     </div>
 //   )
 // }
-

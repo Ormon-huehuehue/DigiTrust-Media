@@ -7,7 +7,7 @@ body {
 }
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 @font-face {
@@ -156,4 +156,36 @@ html {
 .scroller {
   overflow: hidden;
   position: relative;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 12px, 0);
+  will-change: opacity, transform;
+}
+
+.reveal.in {
+  opacity: 1;
+  transform: none;
+  animation: revealFadeIn 0.48s cubic-bezier(0.16, 1, 0.3, 1) var(--reveal-delay, 0ms) both;
+}
+
+@keyframes revealFadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.in {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }

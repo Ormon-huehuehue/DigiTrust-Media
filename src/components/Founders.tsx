@@ -3,7 +3,6 @@
 import React from 'react'
 import LiquidCard from './LiquidCard'
 import GiganticHeader from './GiganticHeader'
-import { motion } from 'framer-motion'
 
 const foundersData = [
     {
@@ -21,13 +20,9 @@ const ourTeamHeaderData = {
 const Founders = () => {
 
     return (
-        <section className="relative py-0 sm:py-0 mb-24">
+        <section data-reveal className="relative py-0 sm:py-0 mb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-8">
-          <motion.div 
-           initial={{ opacity: 0, y: 20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8 }}
-            className="bg-white/80 rounded-3xl shadow-lg border border-blue-100 py-16 px-4 sm:px-12">
+          <div className="bg-white/80 rounded-3xl shadow-lg border border-blue-100 py-16 px-4 sm:px-12">
             <div className="flex flex-col md:flex-row md:items-center md:justify-between md:gap-16 gap-8">
               <div className="min-w-2/3">
                 <GiganticHeader title={ourTeamHeaderData.title} headerCSS="tracking- bg-gradient-to-r from-gray-900 via-gray-400 to-gray-700 bg-clip-text text-transparent" />
@@ -39,7 +34,7 @@ const Founders = () => {
                 <FounderCards/>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
     )

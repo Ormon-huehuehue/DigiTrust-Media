@@ -17,9 +17,9 @@ export const FeatureCard = ({ title, description, delay = 0, className = "" } : 
     return (
       <motion.div
         ref={ref}
-        initial={{ opacity: 0, y: 30 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.6, delay }}
+        initial={{ opacity: 0, y: 18 }}
+        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
+        transition={{ duration: 0.38, delay, ease: [0.16, 1, 0.3, 1] }}
         className={`rounded-2xl p-8 ${className}`}
       >
         <h3 className="text-foreground font-bold text-xl mb-3">{title}</h3>

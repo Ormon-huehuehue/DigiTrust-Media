@@ -130,19 +130,19 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <div className="pt-20 pb-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-100 to-blueish border-2 border-zinc-300" >
+    <section data-reveal className="pt-20 pb-10 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-100 to-blueish border-2 border-zinc-300" >
       <div className="max-w-7xl mx-auto">
         {/* Main heading */}
         <motion.div 
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
         >
           <div className="relative inline-block">
-            <h1 className="text-zinc-700 text-4xl sm:text-5xl md:text-7xl  font-bold mb-6 font-anton">
+            <h2 className="text-zinc-700 text-4xl sm:text-5xl md:text-7xl  font-bold mb-6 font-anton">
               WHY CHOOSE US
-            </h1>
+            </h2>
             {/* <GiganticHeader title="WHY CHOOSE US" headerCSS="tracking- bg-gradient-to-r from-gray-900 via-gray-400 to-gray-700 bg-clip-text text-transparent"  /> */}
             
             {/* Main decorative line */}
@@ -168,7 +168,7 @@ const WhyChooseUs = () => {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
+              transition={{ duration: 0.38, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
             >
               <AnimatedSection
                 title={section.title}
@@ -186,7 +186,7 @@ const WhyChooseUs = () => {
           <AnimatedButton title="Start Your Campaign Today" />
         </Link>
       </div>
-    </div>
+    </section>
   );
 };
 

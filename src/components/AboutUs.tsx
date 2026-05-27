@@ -20,12 +20,12 @@ export default function AboutUs() {
           className="text-5xl font-bold mb-8 text-center text-foreground font-haptik"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
         >
           {heading}
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, x: -50 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}>
             <h3 className="text-3xl font-bold mb-4 text-foreground">{content.heading}</h3>
             <p className="text-muted-foreground mb-6">
               {content.subtext1}
@@ -36,9 +36,9 @@ export default function AboutUs() {
           </motion.div>
           <motion.div
             className="relative h-96"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.42, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary to-primary/60 rounded-lg transform rotate-3"></div>
             <div className="absolute inset-0 bg-card rounded-lg transform -rotate-3 flex items-center justify-center border border-border">

@@ -84,7 +84,7 @@ export default function CampaignProcess({giganticHeader = false} : {giganticHead
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.42, ease: [0.16, 1, 0.3, 1] }}
         >
           {giganticHeader ? <GiganticHeader title="HOW WE WORK" headerCSS="bg-gradient-to-r from-gray-900 via-gray-400 to-gray-700 bg-clip-text text-transparent"/> :   
           <motion.h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-extrabold   font-anton tracking-wide"
@@ -173,9 +173,9 @@ function ProcessStep({
     <motion.div
       ref={ref}
       className={`mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? "flex-row-reverse" : ""}`}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
+      initial={{ opacity: 0, y: 24 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
+      transition={{ duration: 0.38, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
     >
       <div className="w-5/12" />
       <div className="z-20">
@@ -223,9 +223,9 @@ function MobileProcessStep({
     <motion.div
       ref={ref}
       className="mb-6 flex items-start"
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+      transition={{ duration: 0.36, delay: index * 0.04, ease: [0.16, 1, 0.3, 1] }}
     >
       {/* Step icon */}
       <div className="flex-shrink-0 mr-4 mt-2">
