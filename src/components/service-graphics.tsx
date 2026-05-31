@@ -135,7 +135,7 @@ export function CreatorConstellation() {
         <TrendingUp className="h-3.5 w-3.5 text-emerald-500" />
         <span className="font-mono text-[11px] tabular-nums text-zinc-700">1.2M reach</span>
       </Pill>
-      <Pill className="bottom-[10%] left-[0%]" dy={6} duration={5.6} delay={0.8}>
+      <Pill className="bottom-[35%] left-[-20%]" dy={6} duration={5.6} delay={0.8}>
         <Heart className="h-3.5 w-3.5 text-rose-500" />
         <span className="font-mono text-[11px] tabular-nums text-zinc-700">+248% engagement</span>
       </Pill>
