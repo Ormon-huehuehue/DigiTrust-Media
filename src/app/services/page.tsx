@@ -5,6 +5,13 @@ import { AnimatedGridPattern } from '@/components/magicui/animated-grid-pattern'
 import { cn } from '@/lib/utils';
 import GiganticHeader from '@/components/GiganticHeader';
 import { Sparkles, Star, PartyPopper, Search, Megaphone } from 'lucide-react';
+import {
+  CreatorConstellation,
+  SourcingSpotlight,
+  EventsTicket,
+  SeoRanking,
+  AdsPerformance,
+} from '@/components/service-graphics';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -33,7 +40,8 @@ const Page = () => {
     {
       title: "Creator Activation",
       subtitle: "End-to-End Creator Campaigns",
-      icon: <Sparkles className="w-8 h-8 lg:w-10 lg:h-10" />,
+      icon: <Sparkles className="w-5 h-5 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />,
+      graphic: <CreatorConstellation />,
       description:
         "We identify the right creators and match them perfectly to your brand to effectively spread your message to your target audience. From creating bespoke briefs to managing and tracking creator campaigns, we are your all-in-one destination for everything related to creator marketing. Our work ranges from short-term creator campaigns for brand awareness and launches, to long term ambassadorship and always-on creator programmes to build brand love and loyalty.",
       services: [
@@ -53,7 +61,8 @@ const Page = () => {
     {
       title: "Sourcing",
       subtitle: "Celebrity & Influencer Partnerships",
-      icon: <Star className="w-8 h-8 lg:w-10 lg:h-10" />,
+      icon: <Star className="w-5 h-5 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />,
+      graphic: <SourcingSpotlight />,
       description:
         "The most impactful marketing approach for endorsing your brand involves tapping into the widespread popularity and substantial influence of renowned celebrities and content creators. Elevate your brand's credibility, boost awareness, and stimulate both conversations and conversions by leveraging the popularity of well-known public figures.",
       services: [
@@ -72,7 +81,8 @@ const Page = () => {
     {
       title: "Events and Experiences",
       subtitle: "Memorable Brand Moments",
-      icon: <PartyPopper className="w-8 h-8 lg:w-10 lg:h-10" />,
+      icon: <PartyPopper className="w-5 h-5 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />,
+      graphic: <EventsTicket />,
       description:
         "From guest list management to event conceptualisation and curation, we offer everything you need to make your event a memorable experience, and beyond.",
       services: [
@@ -91,7 +101,8 @@ const Page = () => {
     {
       title: "SEO",
       subtitle: "Search Engine Optimization",
-      icon: <Search className="w-8 h-8 lg:w-10 lg:h-10" />,
+      icon: <Search className="w-5 h-5 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />,
+      graphic: <SeoRanking />,
       description:
         "Be found by the people already searching for what you offer. We grow your organic visibility on Google with a mix of technical SEO, on-page optimisation, and content built around real search intent — turning discovery into durable, compounding traffic that doesn't disappear when the ad budget stops.",
       services: [
@@ -111,7 +122,8 @@ const Page = () => {
     {
       title: "Ads Marketing",
       subtitle: "Performance & Paid Media",
-      icon: <Megaphone className="w-8 h-8 lg:w-10 lg:h-10" />,
+      icon: <Megaphone className="w-5 h-5 sm:w-8 sm:h-8 lg:w-10 lg:h-10" />,
+      graphic: <AdsPerformance />,
       description:
         "Put your brand in front of the right audience and pay only for results that matter. We plan, launch, and optimise paid campaigns across Meta, Google, and YouTube — relentlessly testing creative and targeting to drive down cost per acquisition and push your return on ad spend higher, month over month.",
       services: [
@@ -178,8 +190,8 @@ const Page = () => {
       </div>
 
       {/* Main Content */}
-      <main className="relative z-10 px-8 lg:px-12">
-      <div className="max-w-7xl mx-auto space-y-20">
+      <main className="relative z-10 px-4 sm:px-8 lg:px-12">
+      <div className="max-w-7xl mx-auto space-y-6 sm:space-y-8 lg:space-y-12">
           {servicesData.map((service, idx) => (
             <ServiceCard
               key={service.title}
@@ -188,6 +200,7 @@ const Page = () => {
               description={service.description}
               services={service.services}
               icon={service.icon}
+              graphic={service.graphic}
               delay={0.2 * idx}
             />
           ))}

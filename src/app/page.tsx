@@ -1,5 +1,6 @@
 import Hero from "@/components/Hero"
 import WhatWeDo from "@/components/WhatWeDo"
+import ServicesBento from "@/components/ServicesBento"
 import PortfolioGrid from "@/components/PortfolioGrid"
 import Marquee from "@/components/Marquee"
 // import ContactForm from "@/components/ContactForm"
@@ -49,7 +50,9 @@ export default function Home() {
       <BrandShowcase/>
 
       <WhatWeDo />
-     
+
+      <ServicesBento />
+
       <WhyChooseUs />
     
       {/* <FeatureCarousel /> */}
